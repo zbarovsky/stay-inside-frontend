@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import setAuthToken from './utils/setAuthToken';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -9,6 +10,7 @@ import About from './components/About';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Profile from './components/Profile';
+import CreateEvent from './components/CreateEvent'
 
 const PrivateRoute = ({ component: Component, props, ...rest }) => {
   const user = localStorage.getItem(`jwtToken`);
@@ -66,6 +68,7 @@ export default function App() {
             <Route path='/about' exact component={ About } />
             <PrivateRoute path='/profile' component={ Profile } user={currentUser} />
             <Route path='/' exact component={ Welcome } />
+            <Route path='/event' component={ CreateEvent } user={ currentUser } />
           </Switch>
         </div>
         <Footer />
