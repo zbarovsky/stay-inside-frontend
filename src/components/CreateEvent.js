@@ -1,5 +1,10 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import Datetime from 'react-datetime'
+
+const dateStyle = {
+    display: 'inline'
+}
 
 const CreateEvent = (props) => {
     const [eventCreated, setEventCreated] = useState(false)
@@ -19,6 +24,7 @@ const CreateEvent = (props) => {
                     setEventCreated(true)
                     console.log("😆")
                     console.log(eventCreated)
+                    console.log(inputs)
                 } 
                 // else {
                     
@@ -40,19 +46,23 @@ const CreateEvent = (props) => {
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
                             <label>Event Name</label>
+                            <br/>
                             <input required type="text" name="title" onChange={handleInputChange} />
                         </div>
                         <div className="form-group">
                             <label>Link to Event</label>
+                            <br/>
                             <input type="text" name="eventLink" onChange={handleInputChange} />
                         </div>
                         <div className="form-group">
                             <label>Description</label>
+                            <br/>
                             <input required type="text" name="description" onChange={handleInputChange} />
                         </div>
                         <div className="form-group">
                             <label>Date and Time</label>
-                            <input required type="text" name="dateTime" onChange={handleInputChange} />
+                            {/* <input required type="text" name="dateTime" onChange={handleInputChange} /> */}
+                        <Datetime required style={dateStyle}/> {console.log("⏰" + Datetime)}
                         </div>
                         <button type="submit" className="btn btn-primary float-right">Submit</button>
                     </form>
