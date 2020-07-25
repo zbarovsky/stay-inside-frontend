@@ -8,7 +8,7 @@ const dateStyle = {
 
 const CreateEvent = (props) => {
     const [eventCreated, setEventCreated] = useState(false)
-    const [inputs, setInputs] = useState({
+    const [eventInputs, setEventInputs] = useState({
         title: "",
         eventLink: "",
         description: "",
@@ -18,13 +18,13 @@ const CreateEvent = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        axios.post('http://localhost:3000/users/event', inputs)
+        axios.post('http://localhost:3000/users/event', eventInputs)
             .then(response => {
                 if (response.status === 200) {
                     setEventCreated(true)
                     console.log("😆")
                     console.log(eventCreated)
-                    console.log(inputs)
+                    console.log(eventInputs)
                 } 
                 // else {
                     
@@ -35,7 +35,7 @@ const CreateEvent = (props) => {
 
     const handleInputChange = (e) => {
         e.persist()
-        setInputs({...inputs, [e.target.name]: e.target.value})
+        setEventInputs({...eventInputs, [e.target.name]: e.target.value})
     }
 
     return (
