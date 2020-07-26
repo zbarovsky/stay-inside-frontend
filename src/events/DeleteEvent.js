@@ -4,7 +4,7 @@ import axios from 'axios'
 export default function DeleteComment() {
   const handleDelete = e => {
     e.preventDefault()
-    axios.delete(`http://localhost:3000/comments/`)
+    axios.delete('http://localhost:3000')
     .then(response => {
         console.log(response)
     })
