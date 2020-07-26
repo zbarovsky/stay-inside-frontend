@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import NewComment from '../comments/NewComment'
+import ShowComment from '../comments/ShowComment'
 
 export default function ShowEvents() {
   let [events, setEvents] = useState([])
 
     useEffect(()=>{
-        axios.get('http://localhost:3000/users/login/', events)
+        axios.get('http://localhost:3000/events', events)
         .then(response => {
             setEvents(response.data)
             console.log(response)
@@ -20,9 +21,18 @@ export default function ShowEvents() {
     
   return (
     <div className="event1">
-      <div>
-        <NewComment />
-      </div>
+      <ul>
+        {events.map((event, i) => (
+          <li>
+            {event.title} =
+            {event.description}
+            <NewComment />
+            <ShowComment />
+          </li>
+        ))}
+      </ul>
+        <div>
+        </div>
     </div>
   )
 }

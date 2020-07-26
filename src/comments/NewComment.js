@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import ShowComment from '../comments/ShowComment'
+
 import axios from 'axios'
 import { Redirect } from 'react-router-dom';
 
@@ -42,7 +42,7 @@ export default function NewComment() {
         </div>
         <button className='btn' type='submit'>Submit</button>
       </form>
-      <ShowComment />
+      
     </div>
   )
 }
