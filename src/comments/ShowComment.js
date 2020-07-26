@@ -22,7 +22,7 @@ export default function ShowComment() {
       <ul>
         {comments.map((comment, i) => (
           <li>
-            {comment.name}
+            {comment.name}=
             {comment.content}
           </li>
         ))}

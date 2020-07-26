@@ -6,7 +6,7 @@ export default function ShowEvents() {
   let [events, setEvents] = useState([])
 
     useEffect(()=>{
-        axios.get('http://localhost:3000/users/login/', events)
+        axios.get('http://localhost:3000/events', events)
         .then(response => {
             setEvents(response.data)
             console.log(response)
@@ -20,6 +20,14 @@ export default function ShowEvents() {
     
   return (
     <div className="event1">
+            <ul>
+        {events.map((event, i) => (
+          <li>
+            {event.title} =
+            {event.description}
+          </li>
+        ))}
+      </ul>
       <div>
         <NewComment />
       </div>
