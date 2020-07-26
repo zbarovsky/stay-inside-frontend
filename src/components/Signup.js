@@ -17,7 +17,7 @@ const Signup = () => {
   let handleEmail = (e) => {
     setEmail(e.target.value)
   }
-
+  
   let handlePassword = (e) => {
     setPassword(e.target.value)
   }
@@ -34,6 +34,7 @@ const Signup = () => {
         email: email,
         password: password,
       }
+
 
   axios.post('http://localhost:3000/users/register', newUser)
         // .then(res => console.log(res.data))
@@ -52,7 +53,7 @@ const Signup = () => {
         <div className="col-md-7 offset-md-3">
           <div className="card card-body">
             <h2 className="py-2">Signup</h2>
-            <form action="/ideas" method="post" onSubmit={handleSubmit}>
+            <form method="post" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name">Name</label>
                 <input type="text" name="name" value={name} onChange={handleName} className="form-control" />

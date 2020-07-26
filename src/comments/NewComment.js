@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import ShowComment from '../comments/ShowComment'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom';
 
@@ -27,7 +26,6 @@ export default function NewComment() {
     e.persist()
     setInputs({...inputs, [e.target.name]: e.target.value})
   }
-
 
   return (
     <div>
