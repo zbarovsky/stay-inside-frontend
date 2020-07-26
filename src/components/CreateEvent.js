@@ -16,11 +16,15 @@ const CreateEvent = (props) => {
         description: "",
         dateTime: Date
     })
+    // let eventCreated = props.eventCreated
+    // let setEventCreated = props.setEventCreated
 
     const handleSubmit = (e) => {
         e.preventDefault()
 
+
         axios.post('http://localhost:3000/events/create', eventInputs)
+
             .then(response => {
                 if (response.status === 200) {
                     setEventCreated(true)

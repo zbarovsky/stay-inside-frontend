@@ -24,7 +24,6 @@ const PrivateRoute = ({ component: Component, props, ...rest }) => {
 
 export default function App() {
 
-
   // set state values
   let [currentUser, setCurrentUser] = useState("")
   let [isAuthenticated, setIsAuthenticated] = useState(true)
