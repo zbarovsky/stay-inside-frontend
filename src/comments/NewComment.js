@@ -42,7 +42,6 @@ export default function NewComment() {
         </div>
         <button className='btn' type='submit'>Submit</button>
       </form>
-      <ShowComment />
     </div>
   )
 }

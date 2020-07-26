@@ -24,10 +24,10 @@ export default function ShowComment() {
           <li>
             {comment.name}
             {comment.content}
+            <DeleteComment id={comment._id}/>
           </li>
         ))}
       </ul>
-      <DeleteComment />
     </div>
   )
 }
