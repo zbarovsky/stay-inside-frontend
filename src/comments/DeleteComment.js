@@ -5,6 +5,7 @@ export default function DeleteComment(props) {
   const handleDelete = e => {
     e.preventDefault()
     axios.delete(`http://localhost:3000/comments/${props.id}`)
+
     .then(response => {
         console.log(response)
     })
@@ -16,7 +17,7 @@ export default function DeleteComment(props) {
 
   return (
     <div>
-    <form className="delete-bounty-button" onSubmit={handleDelete}>
+    <form className="btn" onSubmit={handleDelete}>
       <input type="submit" value='Delete' />
     </form>
     </div>

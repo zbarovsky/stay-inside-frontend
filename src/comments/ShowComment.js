@@ -21,7 +21,7 @@ export default function ShowComment() {
     <div>
       <ul>
         {comments.map((comment, i) => (
-          <li>
+          <li key={i}>
             {comment.name}=
             {comment.content}
             <DeleteComment id={comment._id}/>

@@ -27,9 +27,11 @@ export default function ShowEvents() {
           <li>
             {event.title} =
             {event.description}
-            <NewComment />
-            <ShowComment />
-            <DeleteEvent id={event._id}/>
+            <div>
+              <NewComment />
+              <ShowComment />
+              <DeleteEvent id={event._id}/>
+            </div>
           </li>
         ))}
       </ul>
