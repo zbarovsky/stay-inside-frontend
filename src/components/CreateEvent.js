@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import Datetime from 'react-datetime'
-import { Redirect } from 'react-router-dom'
+// import Datetime from 'react-datetime'
+// import { Redirect } from 'react-router-dom'
 
-const dateStyle = {
-    display: 'inline'
-}
+// const dateStyle = {
+//     display: 'inline'
+// }
 
 
 const CreateEvent = (props) => {
@@ -16,51 +16,43 @@ const CreateEvent = (props) => {
         description: "",
         dateTime: Date
     })
-    const[myEvents, setMyEvents] = useState([])
-  let myEventList
+    // const[myEvents, setMyEvents] = useState([])
+    
+    // let myEventList
 
-//   useEffect(() => {
-//     axios.get('http://localhost:3000/users/profile')
-//       .then(response => {
-//         if (response.status === 200) {
-//           setMyEvents(response.data)
-//         } 
-//         // else {
-//         //   return (
-//         //     <h3>You Don't Have Any Events Yet</h3>
-//         //   )
-//         // }
-//       }).catch(err => {
-//         console.log("🔥🔥🔥🔥🔥")
-//         console.log(err.message)
-//       })
-//   })
+    let [events, setEvents] = useState([])
 
-//   if (myEvents.length < 1) {
-//     myEventList = "You don't have any events yet"
-//   } else {
-//     myEvents.map((event, i) => {}
-//     )
-//   }
+    useEffect(()=>{
+        axios.get('http://localhost:3000/events', events)
+        .then(response => {
+            setEvents(response.data)
+            console.log(response)
+        })
+        .catch(err => {
+          console.log('🔥🔥🔥🔥')
+          console.log(err)
+        })
+        console.log('call the server for bounties!')
+      }, [])
 
     const handleSubmit = (e) => {
         e.preventDefault()
 
 
-        axios.post('http://localhost:3000/events/create', eventInputs)
+    axios.post('http://localhost:3000/events/create', eventInputs)
 
-            .then(response => {
-                if (response.status === 200) {
-                    setEventCreated(true)
-                    console.log("😆")
-                    console.log(eventCreated)
-                    console.log(eventInputs)
-                } 
-                // else 
-                    
-                // }
-            })
-            // .catch(err => console.log('🤬😡'), console.log(err.message))
+        .then(response => {
+            if (response.status === 200) {
+                setEventCreated(true)
+                console.log("😆")
+                console.log(eventCreated)
+                console.log(eventInputs)
+            } 
+            // else 
+                
+            // }
+        })
+        // .catch(err => console.log('🤬😡'), console.log(err.message))
     }
 
     const handleInputChange = (e) => {
@@ -70,6 +62,14 @@ const CreateEvent = (props) => {
 
     return (
         <div className="row mt-4">
+            <ul>
+                {events.map((event, i) => (
+                <li>
+                    {event.title} =
+                    {event.description}
+                </li>
+                ))}
+            </ul>
             <div className="col-md-7 offset-md-3">
                 <div className="card card-body">
                     <h1>Create a New Event</h1>
