@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-
 import axios from 'axios'
 import { Redirect } from 'react-router-dom';
 
@@ -30,10 +29,13 @@ export default function NewComment(props) {
     setInputs({...inputs, [e.target.name]: e.target.value})
   }
 
+<<<<<<< HEAD
   if (commentCreated) {
     return <Redirect to='/' />
   }
 
+=======
+>>>>>>> 8864fb2305bee65baec64c9fb276799ae9e4369b
   return (
     <div>
       <form onSubmit={commentSubmit}>
@@ -47,7 +49,6 @@ export default function NewComment(props) {
         </div>
         <button className='btn' type='submit'>Submit</button>
       </form>
-      
     </div>
   )
 }
