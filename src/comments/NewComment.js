@@ -3,12 +3,14 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom';
 
-export default function NewComment() {
+export default function NewComment(props) {
   let [commentCreated, setCreatedComment] = useState(false)
   let [inputs, setInputs] = useState({
     name: '',
     content: '',
   })
+
+  console.log(props.user)
 
   let commentSubmit = e => {
     e.preventDefault()

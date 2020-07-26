@@ -16,9 +16,7 @@ const CreateEvent = (props) => {
         description: "",
         dateTime: Date
     })
-    // const[myEvents, setMyEvents] = useState([])
     
-    // let myEventList
 
     let [events, setEvents] = useState([])
 
@@ -89,6 +87,11 @@ const CreateEvent = (props) => {
                             <br/>
                             <input required type="text" name="description" onChange={handleInputChange} />
                         </div>
+                        {/* <div className="form-group">
+                            <label></label>
+                            <br/>
+                            <input required hidden type="text" name="postedBy" onChange={handleInputChange} value={props.user.id}/>
+                        </div> */}
                         {/* <div className="form-group">
                             <label>Date and Time</label>
                             <input required type="text" name="dateTime" onChange={handleInputChange} />
