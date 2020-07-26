@@ -17,7 +17,7 @@ const Signup = () => {
   let handleEmail = (e) => {
     setEmail(e.target.value)
   }
-
+  
   let handlePassword = (e) => {
     setPassword(e.target.value)
   }
@@ -34,6 +34,7 @@ const Signup = () => {
         email: email,
         password: password,
       }
+
 
   axios.post('http://localhost:3000/users/register', newUser)
         // .then(res => console.log(res.data))

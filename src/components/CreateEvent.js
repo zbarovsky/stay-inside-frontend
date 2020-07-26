@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import Datetime from 'react-datetime'
+import { Redirect } from 'react-router-dom'
 
 const dateStyle = {
     display: 'inline'
 }
+
 
 const CreateEvent = (props) => {
     const [eventCreated, setEventCreated] = useState(false)
@@ -18,7 +20,7 @@ const CreateEvent = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        axios.post('http://localhost:3000/users/event', eventInputs)
+        axios.post('http://localhost:3000/events/create', eventInputs)
             .then(response => {
                 if (response.status === 200) {
                     setEventCreated(true)
@@ -26,7 +28,7 @@ const CreateEvent = (props) => {
                     console.log(eventCreated)
                     console.log(eventInputs)
                 } 
-                // else {
+                // else 
                     
                 // }
             })
@@ -59,11 +61,11 @@ const CreateEvent = (props) => {
                             <br/>
                             <input required type="text" name="description" onChange={handleInputChange} />
                         </div>
-                        <div className="form-group">
+                        {/* <div className="form-group">
                             <label>Date and Time</label>
-                            {/* <input required type="text" name="dateTime" onChange={handleInputChange} /> */}
+                            <input required type="text" name="dateTime" onChange={handleInputChange} />
                         <Datetime required style={dateStyle}/> {console.log("⏰" + Datetime)}
-                        </div>
+                        </div> */}
                         <button type="submit" className="btn btn-primary float-right">Submit</button>
                     </form>
                 </div>
