@@ -24,7 +24,8 @@ export default function ShowComment() {
           <li key={i}>
             {comment.name}=
             {comment.content}
-            <DeleteComment id={comment._id}/>
+    
+            <DeleteComment id={comment._id} />
           </li>
         ))}
       </ul>
