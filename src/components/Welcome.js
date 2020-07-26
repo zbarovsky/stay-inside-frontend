@@ -1,9 +1,10 @@
 import React from 'react'
+import ShowEvents from '../events/ShowEvents'
 
 export default function Welcome() {
     return(
-        <>
-            <h1>Welcome</h1>
-        </>
+        <div>
+            <ShowEvents />
+        </div>
     )
 }
