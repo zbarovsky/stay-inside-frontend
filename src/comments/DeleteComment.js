@@ -4,7 +4,7 @@ import axios from 'axios'
 export default function DeleteComment() {
   const handleDelete = e => {
     e.preventDefault()
-    axios.post('http://localhost:3000')
+    axios.delete(`http://localhost:3000/comments/`)
     .then(response => {
         console.log(response)
     })
@@ -16,7 +16,7 @@ export default function DeleteComment() {
 
   return (
     <div>
-    <form className="delete-bounty-button" onSubmit={handleDelete}>
+    <form className="btn" onSubmit={handleDelete}>
       <input type="submit" value='Delete' />
     </form>
     </div>

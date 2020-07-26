@@ -28,7 +28,6 @@ export default function ShowEvents() {
           <li>
             {event.title} =
             {event.description}
-
             <div>
               <NewComment />
               <ShowComment />
