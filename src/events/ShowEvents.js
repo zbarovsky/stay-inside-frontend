@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import NewComment from '../comments/NewComment'
 import ShowComment from '../comments/ShowComment'
+import DeleteEvent from '../events/DeleteEvent'
 
 export default function ShowEvents() {
   let [events, setEvents] = useState([])
@@ -21,18 +22,19 @@ export default function ShowEvents() {
     
   return (
     <div className="event1">
-            <ul>
+      <ul>
         {events.map((event, i) => (
           <li>
             {event.title} =
             {event.description}
+            <div>
+              <NewComment />
+              <ShowComment />
+              <DeleteEvent id={event._id}/>
+            </div>
           </li>
         ))}
       </ul>
-      <div>
-        <NewComment />
-        <ShowComment />
-      </div>
     </div>
   )
 }

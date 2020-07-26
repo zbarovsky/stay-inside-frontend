@@ -27,7 +27,6 @@ export default function ShowComment() {
           </li>
         ))}
       </ul>
-      <DeleteComment />
     </div>
   )
 }
