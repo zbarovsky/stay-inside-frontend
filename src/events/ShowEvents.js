@@ -31,8 +31,6 @@ export default function ShowEvents() {
           </li>
         ))}
       </ul>
-        <div>
-        </div>
     </div>
   )
 }

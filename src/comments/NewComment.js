@@ -30,6 +30,9 @@ export default function NewComment(props) {
     setInputs({...inputs, [e.target.name]: e.target.value})
   }
 
+  if (commentCreated) {
+    return <Redirect to='/' />
+  }
 
   return (
     <div>
