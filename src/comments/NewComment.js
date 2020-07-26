@@ -29,13 +29,6 @@ export default function NewComment(props) {
     setInputs({...inputs, [e.target.name]: e.target.value})
   }
 
-<<<<<<< HEAD
-  if (commentCreated) {
-    return <Redirect to='/' />
-  }
-
-=======
->>>>>>> 8864fb2305bee65baec64c9fb276799ae9e4369b
   return (
     <div>
       <form onSubmit={commentSubmit}>
