@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import ShowComment from '../comments/ShowComment'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom';
 
@@ -28,10 +27,6 @@ export default function NewComment() {
     setInputs({...inputs, [e.target.name]: e.target.value})
   }
 
-  if (commentCreated) {
-    return <Redirect to='/' />
-  }
-
   return (
     <div>
       <form onSubmit={commentSubmit}>
@@ -45,7 +40,6 @@ export default function NewComment() {
         </div>
         <button className='btn' type='submit'>Submit</button>
       </form>
-      <ShowComment />
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import NewComment from '../comments/NewComment'
+import ShowComment from '../comments/ShowComment'
 
 export default function ShowEvents() {
   let [events, setEvents] = useState([])
@@ -30,6 +31,7 @@ export default function ShowEvents() {
       </ul>
       <div>
         <NewComment />
+        <ShowComment />
       </div>
     </div>
   )
