@@ -57,6 +57,7 @@ export default function App() {
   console.log('Current User = ', currentUser);
   console.log('Authenticated = ', isAuthenticated);
 
+  
     return (
       <div>
         <Navbar handleLogout={handleLogout} isAuthed={isAuthenticated} />
@@ -67,7 +68,7 @@ export default function App() {
             <Route path='/about' exact component={ About } />
             <PrivateRoute path='/profile' component={ Profile } user={currentUser} />
             <Route path='/' exact component={ Welcome } />
-            <Route path='/event' component={ CreateEvent } user={ currentUser } />
+            <Route path='/events/create' component={ CreateEvent } user={ currentUser } />
           </Switch>
         </div>
         <Footer />
