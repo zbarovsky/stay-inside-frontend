@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import DeleteComment from '../comments/DeleteComment'
 import axios from 'axios'
+// import { Toast, Button } from 'react-bootstrap';
+import Toast from 'react-bootstrap/Toast'
+import ToastHeader from 'react-bootstrap/ToastHeader'
+
+
 
 export default function ShowComment() {
   const [comments, setComments] = useState([]);
@@ -17,6 +22,7 @@ export default function ShowComment() {
     console.log('call the server for bounties!')
   }, [])
 
+
   return (
     <div>
       {console.log("😭")}
@@ -24,10 +30,13 @@ export default function ShowComment() {
       <ul>
         {comments.map((comment, i) => (
           <li key={i}>
-            {comment.name}=
-            {comment.content}
-    
-            <DeleteComment id={comment._id} />
+            <Toast>
+              <ToastHeader closeButton={false}>
+                    <strong className="mr-auto">{comment.name}</strong>
+                    <small><DeleteComment id={comment._id} /></small>
+              </ToastHeader>  
+              <Toast.Body>{comment.content}</Toast.Body>
+            </Toast>
           </li>
         ))}
       </ul>

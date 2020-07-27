@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import updateEvent from './UpdateEvent'
+import DeleteEvent from './DeleteEvent'
+import { Card } from 'react-bootstrap'
 // import Datetime from 'react-datetime'
 // import { Redirect } from 'react-router-dom'
 
 // const dateStyle = {
 //     display: 'inline'
 // }
+
 
 
 const CreateEvent = (props) => {
@@ -43,6 +46,7 @@ const CreateEvent = (props) => {
             .then(response => {
                 if (response.status === 200) {
                     setEventCreated(true)
+                    window.location.reload(true)
                     console.log("😆")
                     console.log(eventCreated)
                     console.log(eventInputs)
@@ -64,9 +68,16 @@ const CreateEvent = (props) => {
             <ul>
                 {events.map((event, i) => (
                 <li>
-                    {event.title} =
-                    {event.description}
-                    {/* <button className="btn btn-primary float-right" onClick={handleUpdate}>Update</button> */}
+                    <Card className="mb-2"style={{ width: '65vw' }}>
+                    <Card.Body style={{background: "rgba: (0,0,0,0.5)"}}>
+                        <Card.Title>{event.title}</Card.Title>
+                        <Card.Subtitle className="mb-2 text-muted">Card Link</Card.Subtitle>
+                        <Card.Text>
+                        {event.description}
+                        </Card.Text>
+                        <DeleteEvent id={event._id}/>
+                    </Card.Body>
+                    </Card>
                 </li>
                 ))}
             </ul>
