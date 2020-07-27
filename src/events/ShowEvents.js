@@ -17,7 +17,7 @@ export default function ShowEvents() {
           console.log('🔥🔥🔥🔥')
           console.log(err)
         })
-        console.log('call the server for bounties!')
+        console.log('call the server!')
       }, [])
     
   return (

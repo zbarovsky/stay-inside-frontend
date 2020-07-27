@@ -4,17 +4,19 @@ import axios from 'axios'
 
 export default function ShowComment() {
   const [comments, setComments] = useState([]);
+  const [refresh, setRefresh] = useState(false);
 
   useEffect(()=>{
-    axios.get('http://localhost:3000/comments')
+    setRefresh(false)
+    axios.get('http://localhost:3000/comments', comments)
     .then(response => {
-        setComments(response.data)
+      setComments(response.data)
       console.log(response)
     })
     .catch(err => {
       console.log('🔥🔥🔥🔥')
     })
-    console.log('call the server for bounties!')
+    console.log('call for server')
   }, [])
 
   return (
@@ -24,8 +26,7 @@ export default function ShowComment() {
           <li key={i}>
             {comment.name}=
             {comment.content}
-    
-            <DeleteComment id={comment._id} />
+            <DeleteComment id={comment._id} refresh={setRefresh} />
           </li>
         ))}
       </ul>

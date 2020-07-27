@@ -14,6 +14,10 @@ export default function DeleteComment(props) {
     })
   }
 
+  if (handleDelete) {
+    props.refresh(true)
+  }
+
   return (
     <div>
     <form className="btn" onSubmit={handleDelete}>
