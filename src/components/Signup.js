@@ -34,9 +34,9 @@ const Signup = () => {
         email: email,
         password: password,
       }
+      
 
-
-  axios.post('http://localhost:3000/users/register', newUser)
+  axios.post(`${process.env.REACT_APP_EXPRESS_API}/users/register`, newUser)
         // .then(res => console.log(res.data))
     .then(res => {
       setRedirect(true)
