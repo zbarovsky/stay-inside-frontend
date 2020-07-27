@@ -10,7 +10,7 @@ import About from './components/About';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Profile from './components/Profile';
-import CreateEvent from './components/CreateEvent'
+import CreateEvent from './events/CreateEvent'
 
 const PrivateRoute = ({ component: Component, props, ...rest }) => {
   const user = localStorage.getItem(`jwtToken`);

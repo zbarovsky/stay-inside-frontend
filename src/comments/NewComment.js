@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 export default function NewComment(props) {
   let [commentCreated, setCreatedComment] = useState(false)
@@ -9,10 +10,10 @@ export default function NewComment(props) {
     content: '',
   })
 
-  console.log(props.user)
 
   let commentSubmit = e => {
     e.preventDefault()
+    window.location.reload(true)
       axios.post('http://localhost:3000/comments', inputs)
       .then(response => {
           console.log(response)
@@ -40,7 +41,13 @@ export default function NewComment(props) {
           <label for="exampleFormControlTextarea1">Comment</label>
           <input type="text" name='content' class="form-control" id="exampleFormControlInput1" onChange={handleInputChange} />
         </div>
-        <button className='btn' type='submit'>Submit</button>
+        <div class="form-group">
+          <input hidden type="text" name='eventId' class="form-control" id="exampleFormControlInput1" value={props.id} onChange={handleInputChange} />
+        </div>
+        {/* <div class="form-group">
+          <input hidden type="text" name='postedBy' class="form-control" id="exampleFormControlInput1" value={props.user._id} onChange={handleInputChange} />
+        </div> */}
+        <Button variant="secondary" className='btn' type='submit'>Submit</Button>
       </form>
     </div>
   )
