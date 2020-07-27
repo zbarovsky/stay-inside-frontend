@@ -9,7 +9,7 @@ export default function NewComment(props) {
     content: '',
   })
 
-  console.log(props.user)
+  // console.log(props)
 
   let commentSubmit = e => {
     e.preventDefault()
@@ -40,6 +40,12 @@ export default function NewComment(props) {
           <label for="exampleFormControlTextarea1">Comment</label>
           <input type="text" name='content' class="form-control" id="exampleFormControlInput1" onChange={handleInputChange} />
         </div>
+        <div class="form-group">
+          <input hidden type="text" name='eventId' class="form-control" id="exampleFormControlInput1" value={props.id} onChange={handleInputChange} />
+        </div>
+        {/* <div class="form-group">
+          <input hidden type="text" name='postedBy' class="form-control" id="exampleFormControlInput1" value={props.user._id} onChange={handleInputChange} />
+        </div> */}
         <button className='btn' type='submit'>Submit</button>
       </form>
     </div>

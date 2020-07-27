@@ -6,10 +6,10 @@ export default function ShowComment() {
   const [comments, setComments] = useState([]);
 
   useEffect(()=>{
-    axios.get('http://localhost:3000/comments')
+    axios.get('http://localhost:3000/comments', comments)
     .then(response => {
-        setComments(response.data)
-      console.log(response)
+      setComments(response.data)
+      console.log(response.data)
     })
     .catch(err => {
       console.log('🔥🔥🔥🔥')
@@ -19,6 +19,8 @@ export default function ShowComment() {
 
   return (
     <div>
+      {console.log("😭")}
+      {console.log(comments)}
       <ul>
         {comments.map((comment, i) => (
           <li key={i}>

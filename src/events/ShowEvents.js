@@ -4,7 +4,7 @@ import NewComment from '../comments/NewComment'
 import ShowComment from '../comments/ShowComment'
 import DeleteEvent from '../events/DeleteEvent'
 
-export default function ShowEvents() {
+export default function ShowEvents(props) {
   let [events, setEvents] = useState([])
 
     useEffect(()=>{
@@ -28,8 +28,8 @@ export default function ShowEvents() {
             {event.title} =
             {event.description}
             <div>
-              <NewComment />
-              <ShowComment />
+              <ShowComment /> 
+              <NewComment user={props.user} id={event._id}/>
               <DeleteEvent id={event._id}/>
             </div>
           </li>
