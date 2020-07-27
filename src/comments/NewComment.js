@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Redirect } from 'react-router-dom';
+import {Button} from 'react-bootstrap'
+import {InputGroup} from 'react-bootstrap'
+import {FormControl} from 'react-bootstrap'
+
 
 export default function NewComment(props) {
   let [commentCreated, setCreatedComment] = useState(false)
@@ -12,6 +15,7 @@ export default function NewComment(props) {
   console.log(props.user)
 
   let commentSubmit = e => {
+    window.location.reload(); 
     e.preventDefault()
       axios.post('http://localhost:3000/comments', inputs)
       .then(response => {
@@ -31,17 +35,21 @@ export default function NewComment(props) {
 
   return (
     <div>
-      <form onSubmit={commentSubmit}>
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Name</label>
-          <input type="text" name='name' class="form-control" id="exampleFormControlInput1" onChange={handleInputChange} />
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1">Comment</label>
-          <input type="text" name='content' class="form-control" id="exampleFormControlInput1" onChange={handleInputChange} />
-        </div>
-        <button className='btn' type='submit'>Submit</button>
-      </form>
+      <InputGroup 
+        className="mb-3"         
+        type="text" 
+        name='content' 
+        onChange={handleInputChange}>
+      <FormControl 
+        placeholder="Comment"
+        aria-describedby="basic-addon2"
+        type="text" 
+        name='content' 
+      />
+      <InputGroup.Append>
+        <Button onClick={commentSubmit}  variant="outline-secondary">Button</Button>
+      </InputGroup.Append>
+      </InputGroup>
     </div>
   )
 }

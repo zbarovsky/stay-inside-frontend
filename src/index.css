@@ -20,7 +20,13 @@ footer {
   text-align: center;
   padding: 1em;
 }
+.comment-list {
+  list-style: none;
+}
 
+.event-list {
+  list-style: none;
+}
 
 /* .event1 {
   background: cornsilk;

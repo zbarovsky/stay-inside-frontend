@@ -11,7 +11,7 @@ export default function ShowEvents() {
         axios.get('http://localhost:3000/events', events)
         .then(response => {
             setEvents(response.data)
-            console.log(response)
+            console.log(response.data)
         })
         .catch(err => {
           console.log('🔥🔥🔥🔥')
@@ -21,15 +21,15 @@ export default function ShowEvents() {
       }, [])
     
   return (
-    <div className="event1">
+    <div className="event-container">
       <ul>
         {events.map((event, i) => (
-          <li>
+          <li key={i} className='event-list'>
             {event.title} =
             {event.description}
             <div>
-              <NewComment />
               <ShowComment />
+              <NewComment />
               <DeleteEvent id={event._id}/>
             </div>
           </li>
