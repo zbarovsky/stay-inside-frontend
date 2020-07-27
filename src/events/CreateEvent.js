@@ -16,8 +16,39 @@ const CreateEvent = (props) => {
         description: "",
         dateTime: Date
     })
-    
 
+
+    // UPDATE EVENTS
+    // const [eventUpdated, setEventUpdated] = useState(false)
+    // const [updateInput, setUpdateInput] = useState({
+    //     title: "",
+    //     eventLink: "",
+    //     description: "",
+    //     dateTime: Date
+    // })
+    
+    // const handleUpdate = (e) => {
+    //     e.preventDefault()
+
+    //     axios.update(`http://localhost:3000/events/${id}`, updateInput)
+    //         .then(response => {
+    //             if (response.status === 200) {
+    //                 setEventUpdated(true)
+    //                 console.log("😆")
+    //                 console.log(eventUpdated)
+    //                 console.log(updateInput)
+    //             } 
+    //             // else 
+                    
+    //         // }
+    //     })
+    //     // .catch(err => console.log('🤬😡'), console.log(err.message))
+    // }
+
+
+
+
+    // GET EVENTS
     let [events, setEvents] = useState([])
 
     useEffect(()=>{
@@ -33,21 +64,21 @@ const CreateEvent = (props) => {
         console.log('call the server for bounties!')
       }, [])
 
+
+    // CREATE EVENTS
     const handleSubmit = (e) => {
         e.preventDefault()
 
-
-    axios.post('http://localhost:3000/events/create', eventInputs)
-
-        .then(response => {
-            if (response.status === 200) {
-                setEventCreated(true)
-                console.log("😆")
-                console.log(eventCreated)
-                console.log(eventInputs)
-            } 
-            // else 
-                
+        axios.post('http://localhost:3000/events/create', eventInputs)
+            .then(response => {
+                if (response.status === 200) {
+                    setEventCreated(true)
+                    console.log("😆")
+                    console.log(eventCreated)
+                    console.log(eventInputs)
+                } 
+                // else 
+                    
             // }
         })
         // .catch(err => console.log('🤬😡'), console.log(err.message))
@@ -65,6 +96,7 @@ const CreateEvent = (props) => {
                 <li>
                     {event.title} =
                     {event.description}
+                    {/* <button type="update" className="btn btn-primary float-right" onClick={handleUpdate}>Update</button> */}
                 </li>
                 ))}
             </ul>
