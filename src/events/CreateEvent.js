@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import updateEvent from './UpdateEvent'
 // import Datetime from 'react-datetime'
 // import { Redirect } from 'react-router-dom'
 
@@ -100,6 +101,9 @@ const CreateEvent = (props) => {
                         </div> */}
                         <button type="submit" className="btn btn-primary float-right">Submit</button>
                     </form>
+                </div>
+                <div>
+                    {/* <updateEvent event={events}/> */}
                 </div>
             </div>
         </div>
