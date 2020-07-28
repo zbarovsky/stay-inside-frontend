@@ -39,8 +39,8 @@ const Profile = (props) => {
                     <Card.Title>{event.title}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">Card Link</Card.Subtitle>
                     <Card.Text>
-                        {event.date}
-                        {event.description}
+                      {event.date}
+                      {event.description}
                     </Card.Text>
                     <DeleteEvent id={event._id}/>
                   </Card.Body>
