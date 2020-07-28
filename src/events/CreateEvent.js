@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import updateEvent from './UpdateEvent'
-import DeleteEvent from './DeleteEvent'
 import { Card, Button } from 'react-bootstrap'
-import Datetime from 'react-datetime'
+import { FormGroup, Label, Input } from 'reactstrap';
 
 // import { Redirect } from 'react-router-dom'
 
@@ -13,21 +11,25 @@ const CreateEvent = (props) => {
         title: "",
         eventLink: "",
         description: "",
-        date: ""
+        postedBy: props.user.id,
+        date: "",
+        time: ""
     })
 
     // CREATE EVENTS
     const handleSubmit = (e) => {
+        console.log(props.user)
         e.preventDefault()
+        console.log("😆")
+        console.log(eventInputs)
 
         axios.post('http://localhost:3000/events/create', eventInputs)
             .then(response => {
                 if (response.status === 200) {
                     setEventCreated(true)
                     window.location.reload(true)
-                    console.log("😆")
-                    console.log(eventCreated)
-                    console.log(eventInputs)
+                    // console.log(eventCreated)
+                    // console.log(eventInputs)
                     {console.log("⏰" )}
                     {console.log(eventInputs.date )}
                 } 
@@ -64,16 +66,24 @@ const CreateEvent = (props) => {
                                     <br/>
                                     <input required type="text" name="description" onChange={handleInputChange} />
                                 </div>
-                                {/* <div className="form-group">
-                                    <label></label>
-                                    <br/>
-                                    <input required hidden type="text" name="postedBy" onChange={handleInputChange} value={props.user.id}/>
-                                </div> */}
-                                <div className="form-group">
-                                    <label>Date and Time</label>
-                                    {/* <input required type="text" name="dateTime" onChange={handleInputChange} /> */}
-                                    <Datetime type={Date} name={Date}/> 
-                                </div>
+                                <FormGroup>
+                                    <Label for="exampleDate">Date</Label>
+                                    <Input
+                                        type="date"
+                                        name="date"
+                                        placeholder="date placeholder"
+                                        onChange={handleInputChange}
+                                    />
+                                </FormGroup>
+                                <FormGroup>
+                                    <Label for="exampleTime">Time</Label>
+                                    <Input
+                                        type="time"
+                                        name="time"
+                                        placeholder="time placeholder"
+                                        onChange={handleInputChange}
+                                    />
+                                </FormGroup>
                                 <Button variant="info" type="submit" className="btn btn-primary float-right">Submit</Button>
                             </form>
                         </Card.Text>

@@ -43,6 +43,9 @@ const Profile = (props) => {
                     <Card.Subtitle className="mb-2 text-muted">Card Link</Card.Subtitle>
                     <Card.Text>
                       {event.date}
+                      <br/>
+                      {event.time}
+                      <br/>
                       {event.description}
                     </Card.Text>
                     <DeleteEvent id={event._id}/>
