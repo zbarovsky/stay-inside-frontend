@@ -1,5 +1,7 @@
 import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
+import { Card, Button } from 'react-bootstrap'
+import DeleteEvent from '../events/DeleteEvent'
 import axios from 'axios';
 
 const Profile = (props) => {
@@ -29,6 +31,7 @@ const Profile = (props) => {
           <p><strong>Name:</strong> {props.user.name}</p>
           <p><strong>email:</strong> {props.user.email}</p>
           <p><strong>ID:</strong> {props.user.id}</p>
+          <h3>Create a <Link to='/events/create'>New Event</Link></h3>
           <div>
             <h3>Your Events</h3>
             <ul>
@@ -40,6 +43,9 @@ const Profile = (props) => {
                     <Card.Subtitle className="mb-2 text-muted">Card Link</Card.Subtitle>
                     <Card.Text>
                       {event.date}
+                      <br/>
+                      {event.time}
+                      <br/>
                       {event.description}
                     </Card.Text>
                     <DeleteEvent id={event._id}/>

@@ -70,7 +70,7 @@ export default function App() {
             <Route path='/about' exact component={ About } />
             <PrivateRoute path='/profile' component={ Profile } user={currentUser} />
             <Route path='/' exact component={ Welcome }  user={currentUser}/>
-            <Route path='/events/create' component={ CreateEvent } user={ currentUser } />
+            <Route path='/events/create' render={ (props) => <CreateEvent {...props} user={ nowCurrentUser } /> } />
           </Switch>
         </div>
         <Footer />
