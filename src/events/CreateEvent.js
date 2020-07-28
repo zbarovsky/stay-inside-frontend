@@ -1,16 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import updateEvent from './UpdateEvent'
-import DeleteEvent from './DeleteEvent'
-import { Card } from 'react-bootstrap'
-// import Datetime from 'react-datetime'
+import { Card, Button } from 'react-bootstrap'
+import { FormGroup, Label, Input } from 'reactstrap';
+
 // import { Redirect } from 'react-router-dom'
-
-// const dateStyle = {
-//     display: 'inline'
-// }
-
-
 
 const CreateEvent = (props) => {
     const [eventCreated, setEventCreated] = useState(false)
@@ -18,44 +11,29 @@ const CreateEvent = (props) => {
         title: "",
         eventLink: "",
         description: "",
-        dateTime: Date
+        postedBy: props.user.id,
+        date: "",
+        time: ""
     })
-
-    // GET EVENTS
-    let [events, setEvents] = useState([])
-
-    useEffect(()=>{
-        axios.get('http://localhost:3000/events', events)
-        .then(response => {
-            setEvents(response.data)
-            console.log(response)
-        })
-        .catch(err => {
-          console.log('🔥🔥🔥🔥')
-          console.log(err)
-        })
-        console.log('call the server for bounties!')
-      }, [])
-
 
     // CREATE EVENTS
     const handleSubmit = (e) => {
+        console.log(props.user)
         e.preventDefault()
-        
+        console.log("😆")
+        console.log(eventInputs)
+
         axios.post('http://localhost:3000/events/create', eventInputs)
             .then(response => {
                 if (response.status === 200) {
                     setEventCreated(true)
                     window.location.reload(true)
-                    console.log("😆")
-                    console.log(eventCreated)
-                    console.log(eventInputs)
+                    // console.log(eventCreated)
+                    // console.log(eventInputs)
+                    {console.log("⏰" )}
+                    {console.log(eventInputs.date )}
                 } 
-                // else 
-                    
-            // }
-        })
-        // .catch(err => console.log('🤬😡'), console.log(err.message))
+            })
     }
 
     const handleInputChange = (e) => {
@@ -65,38 +43,52 @@ const CreateEvent = (props) => {
 
     return (
         <div className="row mt-4">
+           
             <div className="col-md-7 offset-md-3">
-                <div className="card card-body">
-                    <h1>Create a New Event</h1>
-                    <form onSubmit={handleSubmit}>
-                        <div className="form-group">
-                            <label>Event Name</label>
-                            <br/>
-                            <input required type="text" name="title" onChange={handleInputChange} />
-                        </div>
-                        <div className="form-group">
-                            <label>Link to Event</label>
-                            <br/>
-                            <input type="text" name="eventLink" onChange={handleInputChange} />
-                        </div>
-                        <div className="form-group">
-                            <label>Description</label>
-                            <br/>
-                            <input required type="text" name="description" onChange={handleInputChange} />
-                        </div>
-                        {/* <div className="form-group">
-                            <label></label>
-                            <br/>
-                            <input required hidden type="text" name="postedBy" onChange={handleInputChange} value={props.user.id}/>
-                        </div> */}
-                        {/* <div className="form-group">
-                            <label>Date and Time</label>
-                            <input required type="text" name="dateTime" onChange={handleInputChange} />
-                        <Datetime required style={dateStyle}/> {console.log("⏰" + Datetime)}
-                        </div> */}
-                        <button type="submit" className="btn btn-primary float-right">Submit</button>
-                    </form>
-                </div>
+                <Card className="mb-2">
+                    <Card.Body className="card-style">
+                        <Card.Title>Create a New Event</Card.Title>
+                        <Card.Subtitle className="mb-2 text-muted">Card Link</Card.Subtitle>
+                        <Card.Text>
+                            <form onSubmit={handleSubmit}>
+                                <div className="form-group">
+                                    <label>Event Name</label>
+                                    <br/>
+                                    <input required type="text" name="title" onChange={handleInputChange} />
+                                </div>
+                                <div className="form-group">
+                                    <label>Link to Event</label>
+                                    <br/>
+                                    <input type="text" name="eventLink" onChange={handleInputChange} />
+                                </div>
+                                <div className="form-group">
+                                    <label>Description</label>
+                                    <br/>
+                                    <input required type="text" name="description" onChange={handleInputChange} />
+                                </div>
+                                <FormGroup>
+                                    <Label for="exampleDate">Date</Label>
+                                    <Input
+                                        type="date"
+                                        name="date"
+                                        placeholder="date placeholder"
+                                        onChange={handleInputChange}
+                                    />
+                                </FormGroup>
+                                <FormGroup>
+                                    <Label for="exampleTime">Time</Label>
+                                    <Input
+                                        type="time"
+                                        name="time"
+                                        placeholder="time placeholder"
+                                        onChange={handleInputChange}
+                                    />
+                                </FormGroup>
+                                <Button variant="info" type="submit" className="btn btn-primary float-right">Submit</Button>
+                            </form>
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
                 <div>
                     {/* <updateEvent event={events}/> */}
                 </div>
