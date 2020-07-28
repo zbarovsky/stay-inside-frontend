@@ -12,13 +12,11 @@ import Login from './components/Login';
 import Profile from './components/Profile';
 import CreateEvent from './events/CreateEvent'
 
-const PrivateRoute = ({ component: Component, props, ...rest }) => {
+const PrivateRoute = ({ component: Component, ...rest }) => {
   const user = localStorage.getItem(`jwtToken`);
   return <Route {...rest} render={(props) => (
-      user !== null
-          ? <Component {...props} />
-          : <Redirect to='/login' />
-      )} 
+    user ? <Component {...rest} {...props} /> : <Redirect to='/login' />
+    )} 
   />
 }
 
@@ -64,7 +62,7 @@ export default function App() {
         <div className="container mt-5">
           <Switch>
             <Route path='/signup' component={ Signup } />
-            <Route path='/login' render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser} /> } />
+            <Route path='/login'  render={(props) =>   <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser} /> } />
             <Route path='/about' exact component={ About } />
             <PrivateRoute path='/profile' component={ Profile } user={currentUser} />
             <Route path='/' exact component={ Welcome }  user={currentUser}/>

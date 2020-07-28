@@ -23,7 +23,7 @@ const Login = (props) => {
       email: email,
       password: password
     }
-    axios.post('http://localhost:3000/users/login', userData)
+    axios.post(`${process.env.REACT_APP_API}/users/login`, userData)
       .then(res => {
         const { token } = res.data;
         // Save to LocalStorage
@@ -38,7 +38,8 @@ const Login = (props) => {
       .catch(err => console.log(err));
   }
 
-  //if (props.user !== undefined) return <Redirect to="/profile" user={props.user} />
+  // if (props.user !== undefined) return <Redirect to="/profile" user={props.user} />
+  if (props.user) return <Redirect to="/profile" user={props.user} />
 
   return (
       <div className="row mt-4">

@@ -41,7 +41,7 @@ const CreateEvent = (props) => {
     // CREATE EVENTS
     const handleSubmit = (e) => {
         e.preventDefault()
-
+        
         axios.post('http://localhost:3000/events/create', eventInputs)
             .then(response => {
                 if (response.status === 200) {
@@ -65,22 +65,6 @@ const CreateEvent = (props) => {
 
     return (
         <div className="row mt-4">
-            <ul>
-                {events.map((event, i) => (
-                <li>
-                    <Card className="mb-2"style={{ width: '65vw' }}>
-                    <Card.Body style={{background: "rgba: (0,0,0,0.5)"}}>
-                        <Card.Title>{event.title}</Card.Title>
-                        <Card.Subtitle className="mb-2 text-muted">Card Link</Card.Subtitle>
-                        <Card.Text>
-                        {event.description}
-                        </Card.Text>
-                        <DeleteEvent id={event._id}/>
-                    </Card.Body>
-                    </Card>
-                </li>
-                ))}
-            </ul>
             <div className="col-md-7 offset-md-3">
                 <div className="card card-body">
                     <h1>Create a New Event</h1>

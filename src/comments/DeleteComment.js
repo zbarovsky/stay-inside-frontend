@@ -1,19 +1,11 @@
 import React from 'react'
 import axios from 'axios'
-<<<<<<< HEAD
-import { Button } from 'react-bootstrap'
-=======
 import { Button } from 'react-bootstrap';
->>>>>>> 39fdc295e5980ea84fde33a07986045fd5bfa985
 
 export default function DeleteComment(props) {
   const handleDelete = e => {
     e.preventDefault()
-<<<<<<< HEAD
-    window.location.reload(); 
-=======
     window.location.reload(true)
->>>>>>> 39fdc295e5980ea84fde33a07986045fd5bfa985
     axios.delete(`http://localhost:3000/comments/${props.id}`)
     .then(response => {
         console.log(response)
@@ -26,14 +18,14 @@ export default function DeleteComment(props) {
 
   return (
     <div>
-<<<<<<< HEAD
-      <Button onClick={handleDelete}>X</Button>
-    </div>  
-=======
     <form className="btn" onSubmit={handleDelete}>
-      <Button variant="light" type="submit" ><strong>X</strong></Button>
+      <Button type="submit" className='comment-delete'>
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg" >
+          <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+          <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+        </svg>
+      </Button>
     </form>
     </div>
->>>>>>> 39fdc295e5980ea84fde33a07986045fd5bfa985
   )
 }

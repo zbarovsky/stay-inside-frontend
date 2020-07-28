@@ -8,7 +8,7 @@ const Signup = () => {
   let [email, setEmail] = useState('')
   let [password, setPassword] = useState('')
   let [password2, setPassword2] = useState('')
-  let [redirect, setRedirect] = useState(false)
+  let [redirect, setRedirect] = useState(false)     
 
   let handleName = (e) => {
     setName(e.target.value)
@@ -35,13 +35,12 @@ const Signup = () => {
         password: password,
       }
 
-
-  axios.post('http://localhost:3000/users/register', newUser)
-        // .then(res => console.log(res.data))
-    .then(res => {
-      setRedirect(true)
-    })
-      .catch(err => console.log(err));
+    axios.post(`${process.env.REACT_APP_API}/users/register`, newUser)
+          // .then(res => console.log(res.data))
+      .then(res => {
+        setRedirect(true)
+      })
+        .catch(err => console.log(err));
     }
   }
 
