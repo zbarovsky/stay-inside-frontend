@@ -35,6 +35,7 @@ const Profile = (props) => {
           <div>
             <h3>Your Events</h3>
             <ul>
+              
               {events.map((event, i) => (
                 <li>
                   <Card className="mb-2" >
