@@ -36,21 +36,12 @@ const Signup = () => {
       }
       
 
-<<<<<<< HEAD
-    axios.post(`${process.env.REACT_APP_API}/users/register`, newUser)
-          // .then(res => console.log(res.data))
-      .then(res => {
-        setRedirect(true)
-      })
-        .catch(err => console.log(err));
-=======
   axios.post(`${process.env.REACT_APP_API}/users/register`, newUser)
         // .then(res => console.log(res.data))
     .then(res => {
       setRedirect(true)
     })
       .catch(err => console.log(err));
->>>>>>> 991d685becf7fcb4eb66fef38a80aeddafd34949
     }
   }
 

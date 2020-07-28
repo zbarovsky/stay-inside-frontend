@@ -19,7 +19,7 @@ export default function DeleteComment(props) {
 
   return (
     <div className="delete-event">
-      <form className="btn" onSubmit={handleDelete} />
+      <form className="btn" onSubmit={handleDelete}>
         <Button variant="danger" type="submit" value='Delete Event'>Delete Event</Button>
       </form>
     </div>

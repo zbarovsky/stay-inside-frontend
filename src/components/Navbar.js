@@ -30,19 +30,6 @@ const Navbar = (props) => {
               </li>
               <li className="nav-item">
                   <span onClick={props.handleLogout} className="nav-link logout-link" to="/login">Logout</span>
-<<<<<<< HEAD
-                </li>
-              </ul>
-            : <ul className="navbar-nav ml-auto">
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="/signup">Create Account</NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="/login">Login</NavLink>
-                </li>
-              </ul>
-            } 
-=======
               </li>
           </ul>
         : <ul className="navbar-nav ml-auto">
@@ -54,7 +41,6 @@ const Navbar = (props) => {
             </li>
           </ul>
           }
->>>>>>> 991d685becf7fcb4eb66fef38a80aeddafd34949
         </div>
       </div>
     </nav>

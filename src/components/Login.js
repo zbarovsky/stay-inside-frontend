@@ -40,10 +40,6 @@ const Login = (props) => {
       .catch(err => console.log(err));
   }
 
-<<<<<<< HEAD
-  // if (props.user !== undefined) return <Redirect to="/profile" user={props.user} />
-=======
->>>>>>> 991d685becf7fcb4eb66fef38a80aeddafd34949
   if (props.user) return <Redirect to="/profile" user={props.user} />
 
   return (

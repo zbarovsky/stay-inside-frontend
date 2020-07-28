@@ -12,23 +12,14 @@ import Login from './components/Login';
 import Profile from './components/Profile';
 import CreateEvent from './events/CreateEvent'
 
-<<<<<<< HEAD
-const PrivateRoute = ({ component: Component, ...rest }) => {
-=======
 const PrivateRoute = ({ component: Component, props, ...rest }) => {
   // get user via jwt token to confirm user authenticated
->>>>>>> 991d685becf7fcb4eb66fef38a80aeddafd34949
   const user = localStorage.getItem(`jwtToken`);
   // setup a return based on user status
   return <Route {...rest} render={(props) => (
-<<<<<<< HEAD
-    user ? <Component {...rest} {...props} /> : <Redirect to='/login' />
-    )} 
-=======
       user ? <Component {...rest} {...props}/>
           : <Redirect to='/login' />
       )} 
->>>>>>> 991d685becf7fcb4eb66fef38a80aeddafd34949
   />
 }
 
