@@ -12,8 +12,22 @@ code {
     monospace;
 }
 
+.card-style {
+  background: rgba(103, 103, 103, 0.5);
+  width: 100%;
+  padding: 0;
+}
+
+.delete-event {
+  display: flex;
+  justify-content: flex-end;
+}
+
+li {
+  list-style: none;
+}
+
 footer {
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;

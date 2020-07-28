@@ -6,6 +6,8 @@ import { Redirect } from 'react-router-dom'
 
 
 const Login = (props) => {
+
+  console.log("🍔 login component rendered")
   let [email, setEmail] = useState('')
   let [password, setPassword] = useState('')
 
@@ -23,7 +25,7 @@ const Login = (props) => {
       email: email,
       password: password
     }
-    axios.post('http://localhost:3000/users/login', userData)
+    axios.post(`${process.env.REACT_APP_API}/users/login`, userData)
       .then(res => {
         const { token } = res.data;
         // Save to LocalStorage
@@ -38,27 +40,27 @@ const Login = (props) => {
       .catch(err => console.log(err));
   }
 
-  //if (props.user !== undefined) return <Redirect to="/profile" user={props.user} />
+  if (props.user) return <Redirect to="/profile" user={props.user} />
 
   return (
-      <div className="row mt-4">
-        <div className="col-md-7 offset-md-3">
-          <div className="card card-body">
-            <h2 className="py-2">Login</h2>
-            <form onSubmit={handleSubmit}>
-              <div className="form-group">
-                <label htmlFor="email">Email</label>
-                <input type="email" name="email" value={email} onChange={handleEmail} className="form-control" required />
-              </div>
-              <div className="form-group">
-                <label htmlFor="password">Password</label>
-                <input type="password" name="password" value={password} onChange={handlePassword} className="form-control" required />
-              </div>
-              <button type="submit" className="btn btn-primary float-right">Submit</button>
-            </form>
+    <div className="row mt-4">
+    <div className="col-md-7 offset-md-3">
+      <div className="card card-body">
+        <h2 className="py-2">Login</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input type="email" name="email" value={email} onChange={handleEmail} className="form-control" required />
           </div>
-        </div>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input type="password" name="password" value={password} onChange={handlePassword} className="form-control" required />
+          </div>
+          <button type="submit" className="btn btn-primary float-right">Submit</button>
+        </form>
       </div>
+    </div>
+  </div>
     )
 }
 

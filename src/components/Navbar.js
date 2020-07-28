@@ -23,23 +23,23 @@ const Navbar = (props) => {
             </li>
           </ul>
           { 
-            props.isAuthed
-            ? <ul className="navbar-nav ml-auto">
-                <li className="nav-item">
+            props.isAuthed ?
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item">
                   <NavLink className="nav-link" to="/profile">Profile</NavLink>
-                </li>
-                <li className="nav-item">
+              </li>
+              <li className="nav-item">
                   <span onClick={props.handleLogout} className="nav-link logout-link" to="/login">Logout</span>
-                </li>
-              </ul>
-            : <ul className="navbar-nav ml-auto">
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="/signup">Create Account</NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="/login">Login</NavLink>
-                </li>
-              </ul>
+              </li>
+          </ul>
+        : <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+                <NavLink className="nav-link" to="/signup">Create Account</NavLink>
+            </li>
+            <li className="nav-item">
+                <NavLink className="nav-link" to="/login">Login</NavLink>
+            </li>
+          </ul>
           }
         </div>
       </div>

@@ -26,16 +26,17 @@ export default function ShowEvents(props) {
       <ul>
         {events.map((event, i) => (
           <li>
-            <Card className="mb-2"style={{ width: '65vw' }}>
-              <Card.Body style={{background: "rgba: (0,0,0,0.5)"}}>
+            <Card className="mb-2">
+              <Card.Body className="card-style">
+                <DeleteEvent id={event._id}/>
                 <Card.Title>{event.title}</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">Card Link</Card.Subtitle>
                 <Card.Text>
-                {event.description}
+                  {event.date}
+                  {event.description}
                 </Card.Text>
                 <ShowComment id={event._id}/> 
                 <NewComment user={props.user} id={event._id}/>
-                <DeleteEvent id={event._id}/>
               </Card.Body>
             </Card>
           </li>

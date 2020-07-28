@@ -3,7 +3,22 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const Profile = (props) => {
-  
+
+  // GET EVENTS
+  let [events, setEvents] = useState([])
+
+  useEffect(()=>{
+      axios.get('http://localhost:3000/events', events)
+      .then(response => {
+          setEvents(response.data)
+          console.log(response)
+      })
+      .catch(err => {
+        console.log('🔥🔥🔥🔥')
+        console.log(err)
+      })
+      console.log('call the server for bounties!')
+    }, [])
 
   console.log(props)
   console.log(`${props.user}`)
@@ -14,6 +29,26 @@ const Profile = (props) => {
           <p><strong>Name:</strong> {props.user.name}</p>
           <p><strong>email:</strong> {props.user.email}</p>
           <p><strong>ID:</strong> {props.user.id}</p>
+          <div>
+            <h3>Your Events</h3>
+            <ul>
+              {events.map((event, i) => (
+                <li>
+                  <Card className="mb-2" >
+                  <Card.Body className="card-style">
+                    <Card.Title>{event.title}</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">Card Link</Card.Subtitle>
+                    <Card.Text>
+                      {event.date}
+                      {event.description}
+                    </Card.Text>
+                    <DeleteEvent id={event._id}/>
+                  </Card.Body>
+                  </Card>
+                </li>
+            ))}
+          </ul>
+        </div>
       </div>
     : <h4>Loading...</h4>
 
