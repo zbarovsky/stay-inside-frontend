@@ -1,5 +1,7 @@
 import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
+import { Card, Button } from 'react-bootstrap'
+import DeleteEvent from '../events/DeleteEvent'
 import axios from 'axios';
 
 const Profile = (props) => {

@@ -4,6 +4,7 @@ import updateEvent from './UpdateEvent'
 import DeleteEvent from './DeleteEvent'
 import { Card, Button } from 'react-bootstrap'
 import Datetime from 'react-datetime'
+
 // import { Redirect } from 'react-router-dom'
 
 const CreateEvent = (props) => {
