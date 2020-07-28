@@ -36,18 +36,17 @@ export default function NewComment(props) {
     <div>
       <Toast className="mt-2">
         <ToastHeader closeButton={false}>
-              <strong className="mr-auto"> 
-                <div class="form-group">
-                  <label for="exampleFormControlInput1">Name</label>
-                  <input type="text" name='name' class="form-control" id="exampleFormControlInput1" onChange={handleInputChange} />
-                </div>
-              
-                <div class="form-group">
-                  <label for="exampleFormControlTextarea1">Comment</label>
-                  <input type="text" name='content' class="form-control" id="exampleFormControlInput1" onChange={handleInputChange} />
-                </div>
+          <form onSubmit={commentSubmit}>
+            <strong className="mr-auto"> 
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Name</label>
+                <input type="text" name='name' class="form-control" id="exampleFormControlInput1" onChange={handleInputChange} />
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Comment</label>
+                <input type="text" name='content' class="form-control" id="exampleFormControlInput1" onChange={handleInputChange} />
+              </div>
               </strong>
-              <form onSubmit={commentSubmit}>
             <div class="form-group">
               <input hidden type="text" name='eventId' class="form-control" id="exampleFormControlInput1" value={props.id} onChange={handleInputChange} />
             </div>
