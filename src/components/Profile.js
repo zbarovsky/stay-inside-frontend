@@ -31,6 +31,7 @@ const Profile = (props) => {
           <p><strong>Name:</strong> {props.user.name}</p>
           <p><strong>email:</strong> {props.user.email}</p>
           <p><strong>ID:</strong> {props.user.id}</p>
+          <h3>Create a <Link to='/events/create'>New Event</Link></h3>
           <div>
             <h3>Your Events</h3>
             <ul>
