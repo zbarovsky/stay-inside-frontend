@@ -41,6 +41,8 @@ export default function App() {
     }
   }, [])
 
+  console.log(currentUser)
+  console.log("✨✨✨✨✨✨")
   let nowCurrentUser = (userData) => {
     console.log("oh hey this is even running")
     setCurrentUser(userData);
@@ -69,7 +71,7 @@ export default function App() {
             <Route path='/login' render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser} /> } />
             <Route path='/about' exact component={ About } />
             <PrivateRoute path='/profile' component={ Profile } user={currentUser} />
-            <Route path='/' exact component={ Welcome }  user={currentUser}/>
+            <PrivateRoute path='/' exact component={ Welcome } user={ currentUser } />
             <Route path='/events/create' render={ (props) => <CreateEvent {...props} user={ currentUser } /> } />
           </Switch>
         </div>

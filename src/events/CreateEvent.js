@@ -89,9 +89,6 @@ const CreateEvent = (props) => {
                         </Card.Text>
                     </Card.Body>
                 </Card>
-                <div>
-                    {/* <updateEvent event={events}/> */}
-                </div>
             </div>
         </div>
     )
