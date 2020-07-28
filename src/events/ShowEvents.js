@@ -20,6 +20,8 @@ export default function ShowEvents(props) {
         })
         console.log('call the server!')
       }, [])
+
+  console.log(props.user)
     
   return (
     <div className="event-container">

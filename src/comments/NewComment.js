@@ -7,7 +7,7 @@ import ToastHeader from 'react-bootstrap/ToastHeader'
 
 export default function NewComment(props) {
   let [commentCreated, setCreatedComment] = useState(false)
-  let [inputs, setInputs] = useState({
+  let [commentInputs, setCommentInputs] = useState({
     name: '',
     content: '',
   })
@@ -15,8 +15,7 @@ export default function NewComment(props) {
   let commentSubmit = e => {
     window.location.reload(); 
     e.preventDefault()
-    window.location.reload(true)
-      axios.post('http://localhost:3000/comments', inputs)
+      axios.post('http://localhost:3000/comments', commentInputs)
       .then(response => {
           console.log(response)
           setCreatedComment(true)
@@ -29,34 +28,35 @@ export default function NewComment(props) {
 
   const handleInputChange = e => {
     e.persist()
-    setInputs({...inputs, [e.target.name]: e.target.value})
+    setCommentInputs({...commentInputs, [e.target.name]: e.target.value})
   }
+
+  console.log(props.user)
 
   return (
     <div>
       <Toast className="mt-2">
         <ToastHeader closeButton={false}>
-              <strong className="mr-auto"> 
+          <form onSubmit={commentSubmit}>
+            <div class="form-group">
+              <input hidden type="text" name='eventId' class="form-control" id="exampleFormControlInput1" value={props.id} onChange={handleInputChange} />
+            </div>
+            <strong className="mr-auto"> 
                 <div class="form-group">
                   <label for="exampleFormControlInput1">Name</label>
                   <input type="text" name='name' class="form-control" id="exampleFormControlInput1" onChange={handleInputChange} />
                 </div>
-              
                 <div class="form-group">
                   <label for="exampleFormControlTextarea1">Comment</label>
                   <input type="text" name='content' class="form-control" id="exampleFormControlInput1" onChange={handleInputChange} />
                 </div>
               </strong>
-              <form onSubmit={commentSubmit}>
-            <div class="form-group">
-              <input hidden type="text" name='eventId' class="form-control" id="exampleFormControlInput1" value={props.id} onChange={handleInputChange} />
-            </div>
             {/* <div class="form-group">
-              <input hidden type="text" name='postedBy' class="form-control" id="exampleFormControlInput1" value={props.user._id} onChange={handleInputChange} />
+              <input hidden type="text" name={props.user._id} class="form-control"  onChange={handleInputChange} />
             </div> */}
+            <Button variant="info" className='btn ml-3' type='submit'>Add Comment</Button>
           </form>
         </ToastHeader>  
-            <Button variant="info" className='btn ml-3' type='submit'>Add Comment</Button>
         <Toast.Body> </Toast.Body>
       </Toast>
     </div>

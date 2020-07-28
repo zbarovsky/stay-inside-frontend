@@ -4,21 +4,21 @@ import { Redirect } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 
 export default function NewComment(props) {
-  let [commentCreated, setCreatedComment] = useState(false)
+  let [updateComment, setUpdateComment] = useState(false)
   let [inputs, setInputs] = useState({
     name: '',
     content: '',
   })
 
-  let commentSubmit = e => {
+  let handleUpdateComment = e => {
     window.location.reload(); 
     e.preventDefault()
     window.location.reload(true)
       axios.put(`http://localhost:3000/comments/${props.id}`, inputs)
       .then(response => {
           console.log(response)
-          setCreatedComment(true)
-          console.log(setCreatedComment)
+          setUpdateComment(true)
+          console.log(setUpdateComment)
       })
       .catch(err => {
         console.log('🔥🔥🔥🔥')
@@ -33,7 +33,7 @@ export default function NewComment(props) {
 
   return (
     <div>
-      <form onSubmit={commentSubmit}>
+      <form onSubmit={handleUpdateComment}>
         <div class="form-group">
           <label for="exampleFormControlInput1">Name</label>
           <input type="text" name='name' class="form-control" id="exampleFormControlInput1" onChange={handleInputChange} />
