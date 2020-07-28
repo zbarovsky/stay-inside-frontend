@@ -6,12 +6,6 @@ import { Card, Button } from 'react-bootstrap'
 import Datetime from 'react-datetime'
 // import { Redirect } from 'react-router-dom'
 
-const dateStyle = {
-    display: 'inline'
-}
-
-
-
 const CreateEvent = (props) => {
     const [eventCreated, setEventCreated] = useState(false)
     const [eventInputs, setEventInputs] = useState({
@@ -20,23 +14,6 @@ const CreateEvent = (props) => {
         description: "",
         date: ""
     })
-
-    // GET EVENTS
-    let [events, setEvents] = useState([])
-
-    useEffect(()=>{
-        axios.get('http://localhost:3000/events', events)
-        .then(response => {
-            setEvents(response.data)
-            console.log(response)
-        })
-        .catch(err => {
-          console.log('🔥🔥🔥🔥')
-          console.log(err)
-        })
-        console.log('call the server for bounties!')
-      }, [])
-
 
     // CREATE EVENTS
     const handleSubmit = (e) => {
@@ -61,26 +38,9 @@ const CreateEvent = (props) => {
         setEventInputs({...eventInputs, [e.target.name]: e.target.value})
     }
 
-
     return (
         <div className="row mt-4">
-            <ul>
-                {events.map((event, i) => (
-                <li>
-                    <Card className="mb-2" >
-                    <Card.Body className="card-style">
-                        <Card.Title>{event.title}</Card.Title>
-                        <Card.Subtitle className="mb-2 text-muted">Card Link</Card.Subtitle>
-                        <Card.Text>
-                            {event.date}
-                            {event.description}
-                        </Card.Text>
-                        <DeleteEvent id={event._id}/>
-                    </Card.Body>
-                    </Card>
-                </li>
-                ))}
-            </ul>
+           
             <div className="col-md-7 offset-md-3">
                 <Card className="mb-2">
                     <Card.Body className="card-style">
@@ -111,18 +71,13 @@ const CreateEvent = (props) => {
                                 <div className="form-group">
                                     <label>Date and Time</label>
                                     {/* <input required type="text" name="dateTime" onChange={handleInputChange} /> */}
-                                    <Datetime style={dateStyle} type={Date} name={Date}/> 
+                                    <Datetime type={Date} name={Date}/> 
                                 </div>
-                                    
                                 <Button variant="info" type="submit" className="btn btn-primary float-right">Submit</Button>
                             </form>
                         </Card.Text>
-                        
-                    
-                    
                     </Card.Body>
                 </Card>
-                
                 <div>
                     {/* <updateEvent event={events}/> */}
                 </div>
