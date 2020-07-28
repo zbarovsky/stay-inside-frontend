@@ -4,12 +4,14 @@ import { Redirect } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import Toast from 'react-bootstrap/Toast'
 import ToastHeader from 'react-bootstrap/ToastHeader'
+
 export default function NewComment(props) {
   let [commentCreated, setCreatedComment] = useState(false)
   let [inputs, setInputs] = useState({
     name: '',
     content: '',
   })
+
   let commentSubmit = e => {
     e.preventDefault()
     window.location.reload(true)
@@ -23,10 +25,12 @@ export default function NewComment(props) {
         console.log(err)
       })
     }
+
   const handleInputChange = e => {
     e.persist()
     setInputs({...inputs, [e.target.name]: e.target.value})
   }
+
   return (
     <div>
       <Toast className="mt-2">
@@ -56,3 +60,4 @@ export default function NewComment(props) {
     </div>
   )
 }
+
