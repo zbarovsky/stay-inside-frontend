@@ -6,9 +6,11 @@ import ToastHeader from 'react-bootstrap/ToastHeader'
 
 export default function NewComment(props) {
   let [commentCreated, setCreatedComment] = useState(false)
-  let [commentInputs, setCommentInputs] = useState({
-    content: '',
+  let [inputs, setInputs] = useState({
+    name: props.user.name,
+    content: "",
     postedBy: props.user.id,
+    eventId: props.id
   })
 
   let commentSubmit = e => {
@@ -40,10 +42,10 @@ export default function NewComment(props) {
               <input hidden type="text" name='eventId' class="form-control" id="exampleFormControlInput1" value={props.id} onChange={handleInputChange} />
             </div>
             <strong className="mr-auto"> 
-                <div class="form-group">
+                {/* <div class="form-group">
                   <label for="exampleFormControlInput1">Name</label>
-                  <input hidden type="text" name='name' class="form-control" id="exampleFormControlInput1" onChange={handleInputChange} />
-                </div>
+                  <input hidden type="text" name='postedBy' value={props.user.id} class="form-control" id="exampleFormControlInput1" onChange={handleInputChange} />
+                </div> */}
                 <div class="form-group">
                   <label for="exampleFormControlTextarea1">Comment</label>
                   <input type="text" name='content' class="form-control" id="exampleFormControlInput1" onChange={handleInputChange} />
