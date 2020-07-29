@@ -4,6 +4,7 @@ import { Button } from 'react-bootstrap'
 
 export default function DeleteComment(props) {
   const handleDelete = e => {
+    window.location.reload(); 
     e.preventDefault()
     window.location.reload(true)
     axios.delete(`http://localhost:3000/events/${props.id}`)

@@ -8,7 +8,7 @@ const Signup = () => {
   let [email, setEmail] = useState('')
   let [password, setPassword] = useState('')
   let [password2, setPassword2] = useState('')
-  let [redirect, setRedirect] = useState(false)
+  let [redirect, setRedirect] = useState(false)     
 
   let handleName = (e) => {
     setName(e.target.value)

@@ -68,7 +68,7 @@ export default function App() {
         <div className="container mt-5">
           <Switch>
             <Route path='/signup' component={ Signup } />
-            <Route path='/login' render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser} /> } />
+            <Route path='/login'  render={(props) =>   <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser} /> } />
             <Route path='/about' exact component={ About } />
             <PrivateRoute path='/profile' component={ Profile } user={currentUser} />
             <PrivateRoute path='/' exact component={ Welcome } user={ currentUser } />
