@@ -6,7 +6,7 @@ import ToastHeader from 'react-bootstrap/ToastHeader'
 
 export default function NewComment(props) {
   let [commentCreated, setCreatedComment] = useState(false)
-  let [inputs, setInputs] = useState({
+  let [commentInputs, setCommentInputs] = useState({
     name: props.user.name,
     content: "",
     postedBy: props.user.id,
