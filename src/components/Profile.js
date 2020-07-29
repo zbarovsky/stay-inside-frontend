@@ -2,6 +2,7 @@ import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap'
 import DeleteEvent from '../events/DeleteEvent'
+import UpdateEvent from '../events/UpdateEvent'
 import axios from 'axios';
 
 const Profile = (props) => {
@@ -49,6 +50,7 @@ const Profile = (props) => {
                         {event.description}
                       </Card.Text>
                       <DeleteEvent id={event._id}/>
+                      <UpdateEvent id={event._id} />
                     </Card.Body>
                     </Card>
                   </li>
@@ -68,7 +70,6 @@ const Profile = (props) => {
   return (
     <div>
       {props.user ? userData : errorDiv() }
-      
     </div>
   )
 }

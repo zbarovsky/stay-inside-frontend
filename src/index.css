@@ -36,9 +36,70 @@ footer {
 }
 
 
-/* .event1 {
-  background: cornsilk;
-  height: 100%;
-  width: 100%;
-} */
+.event-list {
+  list-style: none;
+}
+.create-event-list {
+  list-style: none;
+}
 
+
+
+
+
+
+
+/******** COMMENT *********/
+
+.comment-container {
+
+}
+
+.comment-delete {
+  border: none;
+  background: #F0F8FF;
+  
+}
+
+.comment-list {
+  list-style: none;
+}
+
+
+
+
+
+
+
+/******** EVENT *********/
+
+.event-container {
+  display: flex;
+  justify-content: center;
+}
+
+.card-title {
+  background: #F0F8FF;
+}
+
+.delete-event-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0px
+}
+
+
+
+
+
+
+
+
+/******** Card *********/
+
+.card-body{
+}
+.card {
+  width: 100%;
+}
