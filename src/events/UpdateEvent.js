@@ -1,51 +1,96 @@
-// import React, { useState, useEffect } from 'react'
-// import axios from 'axios'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import { Card, Button } from 'react-bootstrap'
+import { FormGroup, Label, Input } from 'reactstrap';
 
+// import { Redirect } from 'react-router-dom'
 
-// // UPDATE EVENTS
-// let [events, setEvents] = useState([])
+const CreateEvent = (props) => {
+    console.log(props.user)
+    const [updateEventCreated, setUpdateEventCreated] = useState(false)
+    const [updateEventInputs, setUpdateEventInputs] = useState({
+        title: "",
+        eventLink: "",
+        description: "",
+        date: "",
+        time: ""
+    })
 
-// useEffect(()=>{
-//     axios.get('http://localhost:3000/events', events)
-//     .then(response => {
-//         setEvents(response.data)
-//         console.log(response)
-//     })
-//     .catch(err => {
-//       console.log('🔥🔥🔥🔥')
-//       console.log(err)
-//     })
-//   }, [])
-// const updateEvent = (props) => {
-//     const [eventUpdated, setEventUpdated] = useState(false)
-//     const [updateInput, setUpdateInput] = useState({
-//         title: event.title,
-//         eventLink: event.eventLink,
-//         description: event.description,
-//         dateTime: Date
-//     })
+    // CREATE EVENTS
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log("😆")
+        console.log(updateEventInputs)
 
+        axios.put(`http://localhost:3000/events/${props.id}`, updateEventInputs)
+            .then(response => {
+                if (response.status === 200) {
+                    setUpdateEventCreated(true)
+                    window.location.reload(true)
+                    // console.log(eventCreated)
+                    // console.log(eventInputs)
+                    {console.log("⏰" )}
+                    {console.log(updateEventInputs.date )}
+                } 
+            })
+    }
 
+    const handleInputChange = (e) => {
+        e.persist()
+        setUpdateEventInputs({...updateEventInputs, [e.target.name]: e.target.value})
+    }
 
-//     const handleUpdate = (e) => {
-//         e.preventDefault()
+    return (
+        <div className="row mt-4">
+           
+            <div className="col-md-7 offset-md-3">
+                <Card className="mb-2">
+                    <Card.Body className="card-style">
+                        <Card.Title>Create a New Event</Card.Title>
+                        <Card.Subtitle className="mb-2 text-muted">Card Link</Card.Subtitle>
+                        <Card.Text>
+                            <form onSubmit={handleSubmit}>
+                                <div className="form-group">
+                                    <label>Event Name</label>
+                                    <br/>
+                                    <input required type="text" name="title" onChange={handleInputChange} />
+                                </div>
+                                <div className="form-group">
+                                    <label>Link to Event</label>
+                                    <br/>
+                                    <input type="text" name="eventLink" onChange={handleInputChange} />
+                                </div>
+                                <div className="form-group">
+                                    <label>Description</label>
+                                    <br/>
+                                    <input required type="text" name="description" onChange={handleInputChange} />
+                                </div>
+                                <FormGroup>
+                                    <Label for="exampleDate">Date</Label>
+                                    <Input
+                                        type="date"
+                                        name="date"
+                                        placeholder="date placeholder"
+                                        onChange={handleInputChange}
+                                    />
+                                </FormGroup>
+                                <FormGroup>
+                                    <Label for="exampleTime">Time</Label>
+                                    <Input
+                                        type="time"
+                                        name="time"
+                                        placeholder="time placeholder"
+                                        onChange={handleInputChange}
+                                    />
+                                </FormGroup>
+                                <Button variant="info" type="submit" className="btn btn-primary float-right">Submit</Button>
+                            </form>
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+            </div>
+        </div>
+    )
+}
 
-//         axios.put(`http://localhost:3000/events/${event._id}`, updateInput)
-//             .then(response => {
-//                 if (response.status === 200) {
-//                     setEventUpdated(true)
-//                     console.log("😆")
-//                     console.log(eventUpdated)
-//                     console.log(updateInput)
-//                 } 
-//                 // else 
-                    
-//             // }
-//         })
-//         // .catch(err => console.log('🤬😡'), console.log(err.message))
-//     }
-
-// }
-
-
-// export default updateEvent
+export default CreateEvent
