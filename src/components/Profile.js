@@ -22,8 +22,8 @@ const Profile = (props) => {
       console.log('call the server for bounties!')
     }, [])
 
-  console.log(props)
-  console.log(`${props.user}`)
+  console.log("🦷🦷🦷🦷🦷🦷🦷🦷🦷")
+  console.log(props.user)
   let userData = props.user
     ? <div>
         <h1>Profile</h1>
