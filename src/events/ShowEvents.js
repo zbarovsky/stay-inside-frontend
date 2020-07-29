@@ -28,7 +28,7 @@ export default function ShowEvents(props) {
                     <br/>
                     {event.description}
                 </Card.Text>
-                <ShowComment id={event._id}/> 
+                <ShowComment id={event._id} /> 
                 <NewComment user={props.user} id={event._id} />
               </Card.Body>
             </Card>
