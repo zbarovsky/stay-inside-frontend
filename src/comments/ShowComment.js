@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import DeleteComment from '../comments/DeleteComment'
 import axios from 'axios'
-// import { Toast, Button } from 'react-bootstrap';
 import Toast from 'react-bootstrap/Toast'
 import ToastHeader from 'react-bootstrap/ToastHeader'
 

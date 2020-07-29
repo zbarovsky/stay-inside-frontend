@@ -6,7 +6,7 @@ import { FormGroup, Label, Input } from 'reactstrap';
 // import { Redirect } from 'react-router-dom'
 
 const CreateEvent = (props) => {
-    console.log(props.user)
+    console.log("line 9", props.user)
     const [eventCreated, setEventCreated] = useState(false)
     const [eventInputs, setEventInputs] = useState({
         title: "",

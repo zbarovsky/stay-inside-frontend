@@ -5,6 +5,8 @@ import { Button } from 'react-bootstrap';
 import Toast from 'react-bootstrap/Toast'
 import ToastHeader from 'react-bootstrap/ToastHeader'
 
+
+
 export default function NewComment(props) {
   let [commentCreated, setCreatedComment] = useState(false)
   let [inputs, setInputs] = useState({
@@ -13,6 +15,10 @@ export default function NewComment(props) {
     postedBy: props.user.id,
     eventId: props.id
   })
+<<<<<<< HEAD
+=======
+console.log(props.id)
+>>>>>>> 03e788dff1b659419dcace057d51587d6808fd51
 
   let commentSubmit = e => {
     e.preventDefault()
