@@ -9,7 +9,6 @@ import { Card } from 'react-bootstrap'
 
 export default function ShowComment() {
   const [comments, setComments] = useState([]);
-  const [refresh, setRefresh] = useState(false);
 
   useEffect(()=>{
     axios.get('http://localhost:3000/comments', comments)

@@ -69,7 +69,7 @@ export default function App() {
             <Route path='/login'  render={(props) =>   <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser} /> } />
             <Route path='/about' exact component={ About } />
             <PrivateRoute path='/profile' component={ Profile } user={currentUser} />
-            <Route path='/' exact component={ Welcome }  user={currentUser}/>
+            <Route path='/' exact render={ (props) => <Welcome {...props} user={ currentUser } /> } />
             <Route path='/events/create' render={ (props) => <CreateEvent {...props} user={ currentUser } /> } />
           </Switch>
         </div>
