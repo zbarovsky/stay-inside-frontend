@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { Button } from 'react-bootstrap'
 import { Collapse } from 'react-bootstrap'
-import UpdateComment from '../comments/UpdateComment'
+import UpdateComment from './UpdateComment'
 
 
-export default function Click(props) {
+export default function UpdateDropDown(props) {
   const [open, setOpen] = useState(false);
 
   return (
