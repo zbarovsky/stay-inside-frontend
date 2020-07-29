@@ -38,6 +38,7 @@ const Profile = (props) => {
             <h3>My Events</h3>
               <ul>
                 {events.map((event, i) => (
+                  
                   <li>
                     <Card className="mb-2" >
                     <Card.Body className="card-style">
@@ -49,7 +50,6 @@ const Profile = (props) => {
                         {event.time}
                         <br/>
                         <a target="_blank" href={`https://${event.eventLink}`}>{event.eventLink}</a>
-                        
                         <br/>
                         {event.description}
                       </Card.Text>

@@ -38,6 +38,8 @@ export default function ShowEvents(props) {
                     <br/>
                     {event.time}
                     <br/>
+                    <a target="_blank" href={`https://${event.eventLink}`}>{event.eventLink}</a>
+                    <br/>
                     {event.description}
                 </Card.Text>
                 <ShowComment id={event._id} /> 
