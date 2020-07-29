@@ -21,7 +21,7 @@ const CreateEvent = (props) => {
         e.preventDefault()
         console.log("😆")
         console.log(updateEventInputs)
-
+        window.location.reload()
         axios.put(`http://localhost:3000/events/${props.id}`, updateEventInputs)
             .then(response => {
                 if (response.status === 200) {
@@ -46,7 +46,7 @@ const CreateEvent = (props) => {
             <div className="col-md-7 offset-md-3">
                 <Card className="mb-2">
                     <Card.Body className="card-style">
-                        <Card.Title>Create a New Event</Card.Title>
+                        <Card.Title>Update Event</Card.Title>
                         <Card.Subtitle className="mb-2 text-muted">Card Link</Card.Subtitle>
                         <Card.Text>
                             <form onSubmit={handleSubmit}>
