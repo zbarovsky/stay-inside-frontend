@@ -50,6 +50,7 @@ const Profile = (props) => {
                         {event.description}
                       </Card.Text>
                       <DeleteEvent id={event._id}/>
+                      <UpdateEvent id={event._id} />
                     </Card.Body>
                     </Card>
                   </li>
