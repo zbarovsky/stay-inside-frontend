@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import DeleteComment from '../comments/DeleteComment'
 import axios from 'axios'
-import Toast from 'react-bootstrap/Toast'
-import ToastHeader from 'react-bootstrap/ToastHeader'
 import UpdateComment from '../comments/UpdateComment'
 import { Card } from 'react-bootstrap'
 
@@ -33,7 +31,7 @@ export default function ShowComment(props) {
           <li key={i} className='comment-list'>
             <Card>
               <Card.Body>
-              <p>{comment.name}</p> 
+                <p>{comment.name}</p> 
                 <p>{comment.content}</p>  
                 <DeleteComment id={comment._id} />
                 <UpdateComment id={comment._id}/>
