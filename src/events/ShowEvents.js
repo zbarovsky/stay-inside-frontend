@@ -29,7 +29,7 @@ export default function ShowEvents(props) {
         <li key={i} className='event-container'>
           <Card>
             <Card.Header as="h5">
-              {event.title}
+              <h2 className='event-title'>{event.title}</h2> 
               <DeleteEvent id={event._id}/>
             </Card.Header>
             <Card.Body>
@@ -38,7 +38,7 @@ export default function ShowEvents(props) {
                 <br/>
                 {event.time}
                 <br/>
-                {event.description}
+               <h5>{event.description}</h5> 
               </Card.Text>
               <ShowComment id={event._id} /> 
               <NewComment user={props.user} id={event._id} />

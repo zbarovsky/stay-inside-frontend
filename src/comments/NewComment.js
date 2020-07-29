@@ -35,17 +35,15 @@ console.log(props.id)
 
 
   return (
-    <div>
-      <form onSubmit={commentSubmit}>
-        <div class="form-group">
-          <input hidden type="text" name='eventId' class="form-control" id="exampleFormControlInput1" value={props.id} onChange={handleInputChange} />
-        </div>
-            <div class="form-group">
-              <label for="exampleFormControlTextarea1">Comment</label>
-              <input type="text" name='content' class="form-control" id="exampleFormControlInput1" onChange={handleInputChange} />
-            </div>   
-        <Button variant="info" className='btn ml-3' type='submit'>Add Comment</Button>
-      </form>
-    </div>
+    <form onSubmit={commentSubmit}>
+      <div class="form-group">
+        <input hidden type="text" name='eventId' class="form-control" id="exampleFormControlInput1" value={props.id} onChange={handleInputChange} />
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Comment</label>
+        <input type="text" name='content' class="form-control" id="exampleFormControlInput1" onChange={handleInputChange} />
+      </div>   
+      <Button variant="info" className='btn ml-3' type='submit'>Add Comment</Button>
+    </form>
   )
 }
