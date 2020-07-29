@@ -10,7 +10,7 @@ const Profile = (props) => {
   let [events, setEvents] = useState([])
 
   useEffect(()=>{
-      axios.get('http://localhost:3000/events', events)
+      axios.post('http://localhost:3000/events', {data: {events: events, user: props.user}})
       .then(response => {
           setEvents(response.data)
           console.log(response)
@@ -34,27 +34,27 @@ const Profile = (props) => {
           <h3>Create a <Link to='/events/create'>New Event</Link></h3>
           <div>
             <h3>Your Events</h3>
-            <ul>
-              
-              {events.map((event, i) => (
-                <li>
-                  <Card className="mb-2" >
-                  <Card.Body className="card-style">
-                    <Card.Title>{event.title}</Card.Title>
-                    <Card.Subtitle className="mb-2 text-muted">Card Link</Card.Subtitle>
-                    <Card.Text>
-                      {event.date}
-                      <br/>
-                      {event.time}
-                      <br/>
-                      {event.description}
-                    </Card.Text>
-                    <DeleteEvent id={event._id}/>
-                  </Card.Body>
-                  </Card>
-                </li>
-            ))}
-          </ul>
+              <ul>
+                {events.map((event, i) => (
+                  <li>
+                    <Card className="mb-2" >
+                    <Card.Body className="card-style">
+                      <Card.Title>{event.title}</Card.Title>
+                      <Card.Subtitle className="mb-2 text-muted">Card Link</Card.Subtitle>
+                      <Card.Text>
+                        {event.date}
+                        <br/>
+                        {event.time}
+                        <br/>
+                        {event.description}
+                      </Card.Text>
+                      <DeleteEvent id={event._id}/>
+                    </Card.Body>
+                    </Card>
+                  </li>
+              ))}
+            </ul>
+          
         </div>
       </div>
     : <h4>Loading...</h4>
