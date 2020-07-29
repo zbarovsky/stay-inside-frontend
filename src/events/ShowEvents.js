@@ -8,6 +8,18 @@ import { Card } from 'react-bootstrap'
 export default function ShowEvents(props) {
   let [events, setEvents] = useState([])
 
+  useEffect(()=>{
+    axios.get('http://localhost:3000/events', events)
+    .then(response => {
+        setEvents(response.data)
+        console.log(response)
+    })
+    .catch(err => {
+      console.log('☠️☠️☠️☠️☠️☠️')
+      console.log(err)
+    })
+    console.log('call the server for bounties!')
+  }, [])
      
   console.log(props.user)
     

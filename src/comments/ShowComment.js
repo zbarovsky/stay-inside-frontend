@@ -24,7 +24,6 @@ export default function ShowComment(props) {
     console.log('call for server')
   }, [])
 
-
   return (
     <div className='comment-container'>
       {console.log("😭")}
@@ -34,6 +33,7 @@ export default function ShowComment(props) {
           <li key={i} className='comment-list'>
             <Card>
               <Card.Body>
+              <p>{comment.name}</p> 
                 <p>{comment.content}</p>  
                 <DeleteComment id={comment._id} />
                 <UpdateComment id={comment._id}/>
