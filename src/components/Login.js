@@ -52,7 +52,7 @@ const Login = (props) => {
           <h4 className="jumboText">Login or Signup to Join the fun!</h4>
         </Container>
       </Jumbotron>
-      <div className="col-md-7 offset-md-2 loginBox mx-auto">
+      <div className="col-md-7 offset-md-2 loginBox">
         <div className="card card-body loginCard">
           <h2 className="py-2">Login</h2>
           <form onSubmit={handleSubmit}>
