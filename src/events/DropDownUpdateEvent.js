@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button } from 'react-bootstrap'
 import { Collapse } from 'react-bootstrap'
-import UpdateComment from './UpdateComment'
+import UpdateEvent from './UpdateEvent'
 
 
 export default function UpdateDropDown(props) {
@@ -21,7 +21,7 @@ export default function UpdateDropDown(props) {
       </Button>
       <Collapse in={open}>
         <div id="example-collapse-text">
-          <UpdateComment id={props.id}/>
+          <UpdateEvent id={props.id}/>
         </div>
       </Collapse>
     </>

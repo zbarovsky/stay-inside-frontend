@@ -29,7 +29,7 @@ export default function ShowComment(props) {
         <li key={i} className='comment-list'>
           <Card>
             <Card.Body>
-              <p>{comment.name}</p> 
+              <h6>{comment.name}</h6> 
               <p>{comment.content}</p>  
               <DeleteComment id={comment._id} />
               <UpdateDropDown id={comment._id}/>

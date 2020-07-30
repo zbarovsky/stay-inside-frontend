@@ -53,7 +53,7 @@ const CreateEvent = (props) => {
                                 <div className="form-group">
                                     <label>Event Name</label>
                                     <br/>
-                                    <input required type="text" name="title" onChange={handleInputChange} />
+                                    <input required hidden type="text" name="title" onChange={handleInputChange} />
                                 </div>
                                 <div className="form-group">
                                     <label>Link to Event</label>
