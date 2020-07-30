@@ -20,7 +20,9 @@ export default function ShowEvents(props) {
     })
     console.log('call the server for bounties!')
   }, [])
-     
+
+
+  console.log("🎲")   
   console.log(props.user)
     
   return (
@@ -42,7 +44,7 @@ export default function ShowEvents(props) {
                 <br/>
                <h5>{event.description}</h5> 
               </Card.Text>
-              <ShowComment id={event._id} /> 
+              <ShowComment user={props.user} id={event._id} /> 
               <NewComment user={props.user} id={event._id} />
             </Card.Body>
           </Card>
