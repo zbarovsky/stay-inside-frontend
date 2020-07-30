@@ -11,6 +11,8 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import Profile from './components/Profile';
 import CreateEvent from './events/CreateEvent'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 const PrivateRoute = ({ component: Component, props, ...rest }) => {
   // get user via jwt token to confirm user authenticated

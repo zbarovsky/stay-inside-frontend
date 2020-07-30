@@ -32,7 +32,7 @@ export default function ShowComment(props) {
               <h6>{comment.name}</h6> 
               <p>{comment.content}</p>  
               <DeleteComment id={comment._id} />
-              <UpdateDropDown id={comment._id}/>
+              <UpdateDropDown user={props.user} commentUser={comment.postedBy._id} id={comment._id}/>
             </Card.Body>
           </Card>
         </li>

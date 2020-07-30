@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap'
 import DeleteEvent from '../events/DeleteEvent'
 import DropDownUpdateEvent from '../events/DropDownUpdateEvent'
@@ -22,6 +22,7 @@ const Profile = (props) => {
       })
       console.log('call the server for bounties!')
     }, [])
+  
 
   console.log("🦷🦷🦷🦷🦷🦷🦷🦷🦷")
   console.log(props.user)
@@ -34,9 +35,10 @@ const Profile = (props) => {
           <p><strong>ID:</strong> {props.user.id}</p>
           <h3>Create a <Link to='/events/create'>New Event</Link></h3>
           <div>
-            <h3>Your Events</h3>
+            <h3>My Events</h3>
               <ul>
                 {events.map((event, i) => (
+                  
                   <li>
                     <Card className="mb-2 shadow-lg p-0 mb-5 bg-white" >
                       <Card.Header className='profile-event-title p-1'>
