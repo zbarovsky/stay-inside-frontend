@@ -2,6 +2,7 @@ import React, { useState, useEffect} from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap'
 import DeleteEvent from '../events/DeleteEvent'
+import UpdateEvent from '../events/UpdateEvent'
 import DropDownUpdateEvent from '../events/DropDownUpdateEvent'
 import axios from 'axios';
 
@@ -27,7 +28,7 @@ const Profile = (props) => {
   console.log("🦷🦷🦷🦷🦷🦷🦷🦷🦷")
   console.log(props.user)
   let userData = props.user
-    ? <div className='profile-container'>
+    ? <div>
         <h1>Profile</h1>
           <img src={props.user.avatar} alt={props.user.name} className="mb-4" />
           <p><strong>Name:</strong> {props.user.name}</p>
@@ -61,6 +62,7 @@ const Profile = (props) => {
                   </li>
               ))}
             </ul>
+          
         </div>
       </div>
     : <h4>Loading...</h4>
