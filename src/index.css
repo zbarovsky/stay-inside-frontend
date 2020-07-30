@@ -4,6 +4,11 @@
   font-family: 'Recursive', sans-serif;
 }
 
+.logo {
+  width: 50px;
+  height: auto;
+}
+
 .jumboText {
   line-height: 2em;
 }

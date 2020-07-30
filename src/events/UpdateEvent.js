@@ -41,10 +41,10 @@ const CreateEvent = (props) => {
     }
 
     return (
-        <div className="row mt-4 mx-auto">
+        <div className="row mt-4">
            
-            <div className="col-md-7 offset-md-3">
-                <Card className="mb-2">
+            <div className="col-md-7 offset-md-3 mx-auto">
+                <Card className="mb-2 mx-auto">
                     <Card.Body className="card-style">
                         <Card.Title>Update Event</Card.Title>
                         <Card.Text>
