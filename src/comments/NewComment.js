@@ -33,7 +33,6 @@ console.log(props.id)
     setCommentInputs({...commentInputs, [e.target.name]: e.target.value})
   }
 
-
   return (
     <form onSubmit={commentSubmit}>
       <div class="form-group">

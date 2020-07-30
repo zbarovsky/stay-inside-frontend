@@ -12,7 +12,6 @@ export default function NewComment(props) {
   let handleUpdateComment = e => {
     window.location.reload(); 
     e.preventDefault()
-    window.location.reload(true)
       axios.put(`http://localhost:3000/comments/${props.id}`, inputs)
       .then(response => {
           console.log(response)
