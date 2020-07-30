@@ -29,10 +29,12 @@ export default function ShowComment(props) {
         <li key={i} className='comment-list'>
           <Card>
             <Card.Body>
+              {console.log("ShowComment commentUser", comment.postedBy._id)}
+              {console.log("ShowComment user", props.user.id)}
               <p>{comment.name}</p> 
               <p>{comment.content}</p>  
               <DeleteComment id={comment._id} />
-              <UpdateDropDown id={comment._id}/>
+              <UpdateDropDown user={props.user} commentUser={comment.postedBy._id} id={comment._id}/>
             </Card.Body>
           </Card>
         </li>
