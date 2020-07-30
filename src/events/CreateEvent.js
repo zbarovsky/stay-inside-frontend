@@ -42,7 +42,7 @@ const CreateEvent = (props) => {
     }
 
     return (
-        <Card className="mx-auto">
+        <Card className="mx-auto shadow-lg p-0 mb-5 bg-white">
             <Card.Header>Create a New Event</Card.Header>
             <Card.Body className="card-style">
                 <Card.Text>

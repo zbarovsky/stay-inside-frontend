@@ -27,10 +27,10 @@ export default function ShowComment(props) {
     <ul className='comment-container'>
       {comments.map((comment, i) => (
         <li key={i} className='comment-list'>
-          <Card>
-            <Card.Body>
+          <Card className='m-1 p-1'>
+            <Card.Body className='p-1 m-0'>
               <h6>{comment.name}</h6> 
-              <p>{comment.content}</p>  
+                <p className='m-0 ml-2 p-1'>{comment.content}</p>  
               <DeleteComment user={props.user} commentUser={comment.postedBy._id} id={comment._id} />
               <UpdateDropDown user={props.user} commentUser={comment.postedBy._id} id={comment._id}/>
             </Card.Body>

@@ -2,6 +2,7 @@ import React, { useState, useEffect} from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap'
 import DeleteEvent from '../events/DeleteEvent'
+import UpdateEvent from '../events/UpdateEvent'
 import DropDownUpdateEvent from '../events/DropDownUpdateEvent'
 import axios from 'axios';
 
@@ -27,21 +28,18 @@ const Profile = (props) => {
   console.log("🦷🦷🦷🦷🦷🦷🦷🦷🦷")
   console.log(props.user)
   let userData = props.user
-    ? <div className='profile-container'>
+    ? <div>
         <h1>Profile</h1>
           <img src={props.user.avatar} alt={props.user.name} className="mb-4" />
           <p><strong>Name:</strong> {props.user.name}</p>
-          <p><strong>email:</strong> {props.user.email}</p>
-          <p><strong>ID:</strong> {props.user.id}</p>
-          <h3>Create a <Link to='/events/create'>New Event</Link></h3>
+          <h5 className=''>Create a <Link to='/events/create'>New Event</Link></h5>
           <div className=''>
-            <h3>My Events</h3>
               <ul>
                 {events.map((event, i) => (
                   <li className='profile-event-container'>
-                    <Card className="" >
-                      <Card.Header className='profile-event-title p-1'>
-                        <h3 className='profile-event-h2'>{event.title}</h3>
+                    <Card className="shadow-lg p-0 mb-5 bg-white" >
+                      <Card.Header className='profile-event-title  p-1'>
+                        <h5 className='profile-event-h2 m-2'>{event.title}</h5>
                         <DeleteEvent id={event._id}/>
                       </Card.Header>
                       <Card.Body>  
@@ -61,6 +59,7 @@ const Profile = (props) => {
                   </li>
               ))}
             </ul>
+          
         </div>
       </div>
     : <h4>Loading...</h4>
