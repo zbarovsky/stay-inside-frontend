@@ -1,17 +1,53 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Recursive', sans-serif;
+}
+
+.jumboText {
+  line-height: 2em;
+}
+
+.loginJumbo {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.loginBox{
+  width: 50%;
+  margin: 0 auto;
+}
+
+.loginCard {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.masterDiv {
+  width: 100%;
+  text-align: center;
+  justify-items: center;
+  justify-content: center;
+  justify-self: center;
+}
+
+.content {
+  text-align: center;
+  text-align: center;
+  justify-items: center;
+  justify-content: center;
+  justify-self: center;
 }
 
 li {
   list-style: none;
 }
 
-
 .about {
-  width: 90vw;
+  width: 100%;
   text-align: center;
   margin-bottom: 50px;
+  margin: 0 auto;
 }
 
 .aboutPage {
