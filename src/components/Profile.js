@@ -2,7 +2,7 @@ import React, { useState, useEffect} from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap'
 import DeleteEvent from '../events/DeleteEvent'
-import UpdateEvent from '../events/UpdateEvent'
+import DropDownUpdateEvent from '../events/DropDownUpdateEvent'
 import axios from 'axios';
 
 const Profile = (props) => {
@@ -27,7 +27,7 @@ const Profile = (props) => {
   console.log("🦷🦷🦷🦷🦷🦷🦷🦷🦷")
   console.log(props.user)
   let userData = props.user
-    ? <div>
+    ? <div className='profile-container'>
         <h1>Profile</h1>
           <img src={props.user.avatar} alt={props.user.name} className="mb-4" />
           <p><strong>Name:</strong> {props.user.name}</p>
@@ -40,28 +40,28 @@ const Profile = (props) => {
                 {events.map((event, i) => (
                   
                   <li>
-                    <Card className="mb-2" >
-                    <Card.Body className="card-style">
-                      <Card.Title>{event.title}</Card.Title>
-                      <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
-                      <Card.Text>
-                        {event.date}
-                        <br/>
-                        {event.time}
-                        <br/>
-                        <a target="_blank" href={`https://${event.eventLink}`}>{event.eventLink}</a>
-                        <br/>
-                        {event.description}
-                      </Card.Text>
-                      <UpdateEvent id={event._id}/>
-                      <DeleteEvent id={event._id}/>
-                      <UpdateEvent id={event._id} />
-                    </Card.Body>
+                    <Card className="mb-2 shadow-lg p-0 mb-5 bg-white" >
+                      <Card.Header className='profile-event-title p-1'>
+                        <h3 className='profile-event-h2'>{event.title}</h3>
+                        <DeleteEvent id={event._id}/>
+                      </Card.Header>
+                      <Card.Body>  
+                        <Card.Text>
+                        <Card.Subtitle className="mb-2 text-muted">Card Link</Card.Subtitle>
+                          {event.date}
+                          <br/>
+                          {event.time}
+                          <br/>
+                          {event.description}
+                        </Card.Text>
+                      </Card.Body>
+                      <Card.Body className='card-body2'>
+                        <DropDownUpdateEvent id={event._id}/>
+                      </Card.Body>
                     </Card>
                   </li>
               ))}
             </ul>
-          
         </div>
       </div>
     : <h4>Loading...</h4>

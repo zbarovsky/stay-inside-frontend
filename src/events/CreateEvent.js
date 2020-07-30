@@ -44,7 +44,7 @@ const CreateEvent = (props) => {
     return (
         <div className="row mt-4">
            
-            <div className="col-md-7 offset-md-3">
+            <div className="col-md-7 offset-md-3 createEvent">
                 <Card className="mb-2">
                     <Card.Body className="card-style">
                         <Card.Title>Create a New Event</Card.Title>
