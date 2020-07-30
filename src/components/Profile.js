@@ -3,6 +3,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap'
 import DeleteEvent from '../events/DeleteEvent'
 import UpdateEvent from '../events/UpdateEvent'
+import DropDownUpdateEvent from '../events/DropDownUpdateEvent'
 import axios from 'axios';
 
 const Profile = (props) => {
