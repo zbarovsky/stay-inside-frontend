@@ -32,17 +32,14 @@ const Profile = (props) => {
         <h1>Profile</h1>
           <img src={props.user.avatar} alt={props.user.name} className="mb-4" />
           <p><strong>Name:</strong> {props.user.name}</p>
-          <p><strong>email:</strong> {props.user.email}</p>
-          <p><strong>ID:</strong> {props.user.id}</p>
-          <h3>Create a <Link to='/events/create'>New Event</Link></h3>
+          <h5 className=''>Create a <Link to='/events/create'>New Event</Link></h5>
           <div className=''>
-            <h3>My Events</h3>
               <ul>
                 {events.map((event, i) => (
                   <li className='profile-event-container'>
-                    <Card className="" >
-                      <Card.Header className='profile-event-title p-1'>
-                        <h3 className='profile-event-h2'>{event.title}</h3>
+                    <Card className="shadow-lg p-0 mb-5 bg-white" >
+                      <Card.Header className='profile-event-title  p-1'>
+                        <h5 className='profile-event-h2 m-2'>{event.title}</h5>
                         <DeleteEvent id={event._id}/>
                       </Card.Header>
                       <Card.Body>  

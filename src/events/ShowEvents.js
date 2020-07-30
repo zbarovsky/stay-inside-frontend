@@ -31,7 +31,7 @@ export default function ShowEvents(props) {
         <li key={i} className='event-container'>
           <Card className='shadow-lg p-0 mb-5 bg-white'>
             <Card.Header className='bg-light p-1'>
-              <h3 className='event-title'>{event.title}</h3> 
+              <h5 className='event-title m-2'>{event.title}</h5> 
               <DeleteEvent id={event._id}/>
             </Card.Header>
             <Card.Body>
