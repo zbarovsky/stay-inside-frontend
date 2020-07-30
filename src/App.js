@@ -64,10 +64,10 @@ export default function App() {
 
   
     return (
-      <div>
+      <div className="masterDiv">
          {/* is Authed/ isAuthenticated below */}
         <Navbar handleLogout={handleLogout} isAuthed={isAuthenticated} />
-        <div className="container mt-5">
+        <div className="container mt-5 content">
           <Switch>
             <Route path='/signup' component={ Signup } />
             <Route path='/login'  render={(props) =>   <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser} /> } />

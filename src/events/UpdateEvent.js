@@ -47,7 +47,6 @@ const CreateEvent = (props) => {
                 <Card className="mb-2">
                     <Card.Body className="card-style">
                         <Card.Title>Update Event</Card.Title>
-                        <Card.Subtitle className="mb-2 text-muted">Card Link</Card.Subtitle>
                         <Card.Text>
                             <form onSubmit={handleSubmit}>
                                 <div className="form-group">
