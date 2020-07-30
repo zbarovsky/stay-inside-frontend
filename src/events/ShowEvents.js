@@ -29,9 +29,9 @@ export default function ShowEvents(props) {
     <ul>
       {events.map((event, i) => (
         <li key={i} className='event-container'>
-          <Card>
-            <Card.Header as="h5">
-              <h2 className='event-title'>{event.title}</h2> 
+          <Card className='shadow-lg p-0 mb-5 bg-white'>
+            <Card.Header className='bg-light p-1'>
+              <h3 className='event-title'>{event.title}</h3> 
               <DeleteEvent id={event._id}/>
             </Card.Header>
             <Card.Body>

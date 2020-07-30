@@ -43,7 +43,6 @@ const CreateEvent = (props) => {
 
     return (
         <div className="row mt-4">
-           
             <div className="col-md-7 offset-md-3">
                 <Card className="mb-2">
                     <Card.Body className="card-style">

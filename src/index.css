@@ -1,21 +1,6 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-
-.delete-event {
-  display: flex;
-  justify-content: flex-end;
+  padding: 0;
 }
 
 li {
@@ -54,8 +39,10 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
+  height: 50px;
   text-align: center;
   padding: 1em;
+  position: fixed;
 }
 
 .event-list {
@@ -103,8 +90,9 @@ footer {
 .event-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 100%
+  height: 100%;
 }
 
 .card-title {
@@ -112,37 +100,77 @@ footer {
 }
 
 .event-title {
+  margin-left: 10px;
   width: 100%;
-}
-
-.delete-event-container {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 0px
 }
 
 .card-header {
   display: flex;
   flex-direction: row;
   width: 100%;
+  background-color: #17a2b8;
 }
 
-.event-delete {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-}
-
-
-
-
-
-/******** Card *********/
-
-.card-body{
-}
 .card {
-  width: 100%;
+  width: 90%;
+  height: 100%;
   margin: 20px
+}
+
+.delete-event {
+  margin-right: 5px;
+}
+
+.event-delete-btn {
+  text-decoration: none;
+  padding: -8;
+}
+
+
+
+
+
+
+
+/******** Home *********/
+
+.home-container {
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+
+
+
+
+
+/******** Profile *********/
+
+.profile-container {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 100px
+}
+
+.profile-event-title {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.profile-event-h2 {
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+/******** LOGOUT *********/
+
+.logout-link {
+  cursor: pointer;
 }
