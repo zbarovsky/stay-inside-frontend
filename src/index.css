@@ -27,6 +27,38 @@ li {
   list-style: none;
 }
 
+
+.about {
+  width: 90vw;
+  text-align: center;
+}
+
+.aboutPage {
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 75vw;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.aboutImg {
+  width: 25vw;
+}
+
+.member {
+  width: 30vw;
+  text-align: center;
+  padding: 30px;
+}
+
+.aboutTitle {
+  width: 40vw;
+  margin: 0 auto;
+}
+
 footer {
   left: 0;
   bottom: 0;
