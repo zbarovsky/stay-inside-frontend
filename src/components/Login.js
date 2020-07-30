@@ -3,6 +3,7 @@ import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 import setAuthToken from '../utils/setAuthToken';
 import { Redirect } from 'react-router-dom'
+import { Jumbotron, Container } from 'react-bootstrap'
 
 
 const Login = (props) => {
@@ -43,24 +44,31 @@ const Login = (props) => {
   if (props.user) return <Redirect to="/profile" user={props.user} />
 
   return (
-    <div className="row mt-4">
-    <div className="col-md-7 offset-md-3">
-      <div className="card card-body">
-        <h2 className="py-2">Login</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input type="email" name="email" value={email} onChange={handleEmail} className="form-control" required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input type="password" name="password" value={password} onChange={handlePassword} className="form-control" required />
-          </div>
-          <button type="submit" className="btn btn-primary float-right">Submit</button>
-        </form>
+    <div className="loginPage">
+      <Jumbotron fluid className="loginJumbo p-1">
+        <Container>
+          <h1 className="jumboText">Stay Inside</h1> 
+          <h3 className="jumboText">A Social Distancing Event Scheduling App</h3>
+          <h4 className="jumboText">Login or Signup to Join the fun!</h4>
+        </Container>
+      </Jumbotron>
+      <div className="col-md-7 offset-md-2 loginBox mx-auto">
+        <div className="card card-body loginCard">
+          <h2 className="py-2">Login</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <input type="email" name="email" value={email} onChange={handleEmail} className="form-control" required />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input type="password" name="password" value={password} onChange={handlePassword} className="form-control" required />
+            </div>
+            <button type="submit" className="btn btn-primary float-right">Submit</button>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
     )
 }
 

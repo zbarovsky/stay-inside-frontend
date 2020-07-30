@@ -34,13 +34,12 @@ const Profile = (props) => {
           <p><strong>email:</strong> {props.user.email}</p>
           <p><strong>ID:</strong> {props.user.id}</p>
           <h3>Create a <Link to='/events/create'>New Event</Link></h3>
-          <div>
+          <div className=''>
             <h3>My Events</h3>
               <ul>
                 {events.map((event, i) => (
-                  
-                  <li>
-                    <Card className="mb-2 shadow-lg p-0 mb-5 bg-white" >
+                  <li className='profile-event-container'>
+                    <Card className="" >
                       <Card.Header className='profile-event-title p-1'>
                         <h3 className='profile-event-h2'>{event.title}</h3>
                         <DeleteEvent id={event._id}/>
