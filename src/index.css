@@ -51,13 +51,9 @@ li {
 .member {
   width: 30vw;
   text-align: center;
-  padding: 30px;
+  margin: 15px;
 }
 
-.aboutTitle {
-  width: 40vw;
-  margin: 0 auto;
-}
 
 footer {
   left: 0;
