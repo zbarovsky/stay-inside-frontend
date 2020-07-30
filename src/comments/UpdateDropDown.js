@@ -35,6 +35,7 @@ export default function UpdateDropDown(props) {
             <UpdateComment user={props.user} id={props.id}/>
           </div>
         </Collapse>
+        </Button>
       </div>
     );
   }  else {
