@@ -24,29 +24,29 @@ export default function ShowEvents(props) {
   console.log(props.user)
     
   return (
-    <div className="event-container">
-      <ul>
-        {events.map((event, i) => (
-          <li key={i}>
-            <Card className="mb-2">
-              <Card.Body className="card-style">
-                <DeleteEvent id={event._id}/>
-                <Card.Title>{event.title}</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">Card Link</Card.Subtitle>
-                <Card.Text>
-                  {event.date}
-                    <br/>
-                    {event.time}
-                    <br/>
-                    {event.description}
-                </Card.Text>
-                <ShowComment id={event._id} /> 
-                <NewComment user={props.user} id={event._id} />
-              </Card.Body>
-            </Card>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ul>
+      {events.map((event, i) => (
+        <li key={i} className='event-container'>
+          <Card>
+            <Card.Header as="h5">
+              <h2 className='event-title'>{event.title}</h2> 
+              <DeleteEvent id={event._id}/>
+            </Card.Header>
+            <Card.Body>
+              <Card.Text>
+                {event.date}
+                <br/>
+                {event.time}
+                <br/>
+               <h5>{event.description}</h5> 
+              </Card.Text>
+              <ShowComment id={event._id} /> 
+              <NewComment user={props.user} id={event._id} />
+            </Card.Body>
+          </Card>
+        </li>
+      ))}
+    </ul>
   )
 }
+
