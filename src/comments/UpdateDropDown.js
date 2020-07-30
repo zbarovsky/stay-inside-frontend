@@ -10,7 +10,7 @@ export default function UpdateDropDown(props) {
   console.log("UpdateDropDown User Id", props.user.id)
   console.log("UpdateDropDown Comment User", props.commentUser)
 
-  let button
+  
   if (props.user.id === props.commentUser){
     console.log("THEY ARE THE SAME")
   } else {
@@ -35,6 +35,7 @@ export default function UpdateDropDown(props) {
             <UpdateComment user={props.user} id={props.id}/>
           </div>
         </Collapse>
+        </Button>
       </div>
     );
   }  else {
