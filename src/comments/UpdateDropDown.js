@@ -10,7 +10,7 @@ export default function UpdateDropDown(props) {
   console.log("UpdateDropDown User Id", props.user.id)
   console.log("UpdateDropDown Comment User", props.commentUser)
 
-  let button
+  
   if (props.user.id === props.commentUser){
     console.log("THEY ARE THE SAME")
   } else {

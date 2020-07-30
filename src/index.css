@@ -26,6 +26,7 @@ li {
 .about {
   width: 90vw;
   text-align: center;
+  margin-bottom: 50px;
 }
 
 .aboutPage {
@@ -51,11 +52,13 @@ li {
 
 
 footer {
-  left: 0;
   bottom: 0;
+  left: 0;
   width: 100%;
   text-align: center;
   padding: 1em;
+  margin: 0;
+  position: fixed;
 }
 
 .event-list {
@@ -65,7 +68,9 @@ footer {
   list-style: none;
 }
 
-
+.createEvent {
+  margin-bottom: 100px;
+}
 
 
 
