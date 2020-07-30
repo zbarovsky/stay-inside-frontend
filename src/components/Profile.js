@@ -34,29 +34,29 @@ const Profile = (props) => {
           <p><strong>email:</strong> {props.user.email}</p>
           <p><strong>ID:</strong> {props.user.id}</p>
           <h3>Create a <Link to='/events/create'>New Event</Link></h3>
-          <div>
+          <div className=''>
             <h3>My Events</h3>
               <ul>
                 {events.map((event, i) => (
-                  
-                  <li>
-                    <Card className="mb-2" >
-                    <Card.Body className="card-style">
-                      <Card.Title>{event.title}</Card.Title>
-                      <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
-                      <Card.Text>
-                        {event.date}
-                        <br/>
-                        {event.time}
-                        <br/>
-                        <a target="_blank" href={`https://${event.eventLink}`}>{event.eventLink}</a>
-                        <br/>
-                        {event.description}
-                      </Card.Text>
-                      <UpdateEvent id={event._id}/>
-                      <DeleteEvent id={event._id}/>
-                      <UpdateEvent id={event._id} />
-                    </Card.Body>
+                  <li className='profile-event-container'>
+                    <Card className="" >
+                      <Card.Header className='profile-event-title p-1'>
+                        <h3 className='profile-event-h2'>{event.title}</h3>
+                        <DeleteEvent id={event._id}/>
+                      </Card.Header>
+                      <Card.Body>  
+                        <Card.Text>
+                        <Card.Subtitle className="mb-2 text-muted">Card Link</Card.Subtitle>
+                          {event.date}
+                          <br/>
+                          {event.time}
+                          <br/>
+                          {event.description}
+                        </Card.Text>
+                      </Card.Body>
+                      <Card.Body className='card-body2'>
+                        <DropDownUpdateEvent id={event._id}/>
+                      </Card.Body>
                     </Card>
                   </li>
               ))}
