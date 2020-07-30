@@ -19,15 +19,16 @@
 - MongoDB
 - Mongoose
 - Express
+- Bootstrap
 
 ## MVP
 - Users will be able to:
-    - [ ] Login/Signup
-    - [ ] Have a personalized profile page
-    - [ ] View a homepage that displays all events
-        - [ ] Comment on event posts
-    - [ ] Create events
-        - [ ] Give a title, description, and date of the event
+    - [ ] Login/Signup ✅
+    - [ ] Have a personalized profile page ✅
+    - [ ] View a homepage that displays all events ✅
+        - [ ] Comment on event posts ✅
+    - [ ] Create events ✅
+        - [ ] Give a title, description, and date of the event ✅
 
 
 ## Stretch Goals
@@ -39,6 +40,13 @@
     - [ ] Follow events which will add it to my personal calendar
     - [ ] Invite specific people to your events
     - [ ] Add an image to their profile
+
+## Known Bugs
+- if refresh is hit on profile page, all events disappear, will return if you leave page and come back again.
+
+## Road blocks
+- individual user comment/event functionality came with many bugs.
+
 
 
 
