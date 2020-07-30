@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { Button } from 'react-bootstrap';
+import { Form } from 'react-bootstrap'
+import { InputGroup } from 'react-bootstrap'
+import { FormControl } from 'react-bootstrap' 
 
- 
 
 export default function NewComment(props) {
   let [commentCreated, setCreatedComment] = useState(false)
@@ -34,15 +36,25 @@ console.log(props.id)
   }
 
   return (
-    <form onSubmit={commentSubmit}>
-      <div class="form-group">
-        <input hidden type="text" name='eventId' class="form-control" id="exampleFormControlInput1" value={props.id} onChange={handleInputChange} />
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlTextarea1">Comment</label>
-        <input type="text" name='content' class="form-control" id="exampleFormControlInput1" onChange={handleInputChange} />
-      </div>   
-      <Button variant="info" className='btn ml-3' type='submit'>Add Comment</Button>
-    </form>
+    <Form onSubmit={commentSubmit}>
+      <InputGroup className="mb-3 mt-3">
+      <FormControl
+        aria-describedby="basic-addon2"
+        hidden type="text" name='eventId'
+        onChange={handleInputChange}
+      />
+        <FormControl
+        className='rounded-sm'
+        placeholder="Comment"
+        aria-label="Comment"
+        aria-describedby="basic-addon2"
+        type="text" name='content'
+        onChange={handleInputChange}
+      />
+      <InputGroup.Append>
+        <Button variant="outline-info" type='submit'>Submit</Button>
+      </InputGroup.Append>
+      </InputGroup>
+    </Form>
   )
 }
