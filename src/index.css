@@ -22,6 +22,34 @@ li {
   list-style: none;
 }
 
+
+.about {
+  width: 90vw;
+  text-align: center;
+}
+
+.aboutPage {
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 75vw;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.aboutImg {
+  width: 25vw;
+}
+
+.member {
+  width: 30vw;
+  text-align: center;
+  margin: 15px;
+}
+
+
 footer {
   left: 0;
   bottom: 0;
@@ -30,14 +58,12 @@ footer {
   padding: 1em;
 }
 
-
 .event-list {
   list-style: none;
 }
 .create-event-list {
   list-style: none;
 }
-
 
 
 
