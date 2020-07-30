@@ -8,11 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
-<<<<<<< HEAD
-    "card": "^2.5.0",
-=======
     "jquery": "^3.5.1",
->>>>>>> 1438cce00cbb1cd98cf643187cdf62fa340c2543
     "jwt-decode": "^2.2.0",
     "moment": "^2.27.0",
     "popper.js": "^1.16.1",
