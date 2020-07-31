@@ -62,18 +62,20 @@ li {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  width: 75vw;
+  width: 100%;
   height: 100%;
   margin: 0 auto;
-  margin-bottom: 100px;
 }
 
 .aboutImg {
-  width: 25vw;
+  width: 400px;
+  height: 400px;
+  margin: 10px;
 }
 
 .member {
-  width: 30vw;
+  width: 400px;
+  height: 500px;
   text-align: center;
   margin: 15px;
 }
