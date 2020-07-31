@@ -7,7 +7,7 @@ export default function DeleteComment(props) {
     window.location.reload(); 
     e.preventDefault()
     window.location.reload(true)
-    axios.delete(`https://stay-inside-meet-up.netlify.app/events/${props.id}`)
+    axios.delete(`${process.env.REACT_APP_API}/events/${props.id}`)
     .then(response => {
         console.log(response)
     })
