@@ -9,7 +9,7 @@ export default function ShowEvents(props) {
   let [events, setEvents] = useState([])
 
   useEffect(()=>{
-    axios.get('http://localhost:3000/events', events)
+    axios.get('https://stay-inside-meet-up.netlify.app/events', events)
     .then(response => {
         setEvents(response.data)
         console.log(response)

@@ -22,7 +22,7 @@ const CreateEvent = (props) => {
         console.log("😆")
         console.log(updateEventInputs)
         window.location.reload()
-        axios.put(`http://localhost:3000/events/${props.id}`, updateEventInputs)
+        axios.put(`https://stay-inside-meet-up.netlify.app/events/${props.id}`, updateEventInputs)
             .then(response => {
                 if (response.status === 200) {
                     setUpdateEventCreated(true)
