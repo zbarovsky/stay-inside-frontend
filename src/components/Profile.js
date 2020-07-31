@@ -12,7 +12,7 @@ const Profile = (props) => {
   let [events, setEvents] = useState([])
 
   useEffect(()=>{
-      axios.post('http://localhost:3000/events', {data: {events: events, user: props.user}})
+      axios.post(`${process.env.REACT_APP_API}/events`, {data: {events: events, user: props.user}})
       .then(response => {
           setEvents(response.data)
           console.log(response)

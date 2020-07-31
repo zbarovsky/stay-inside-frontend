@@ -7,7 +7,7 @@ export default function DeleteComment(props) {
     window.location.reload(); 
     e.preventDefault()
     window.location.reload(true)
-    axios.delete(`http://localhost:3000/events/${props.id}`)
+    axios.delete(`${process.env.REACT_APP_API}events/${props.id}`)
     .then(response => {
         console.log(response)
     })
