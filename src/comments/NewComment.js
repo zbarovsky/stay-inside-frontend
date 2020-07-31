@@ -19,7 +19,7 @@ console.log(props.id)
   let commentSubmit = e => {
     window.location.reload(); 
     e.preventDefault()
-      axios.post('http://localhost:3000/comments', commentInputs)
+      axios.post('https://stay-inside-meet-up.netlify.app/comments', commentInputs)
       .then(response => {
           console.log(response)
           setCreatedComment(true)

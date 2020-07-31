@@ -23,7 +23,7 @@ const CreateEvent = (props) => {
         console.log("😆")
         console.log(eventInputs)
 
-        axios.post('http://localhost:3000/events/create', eventInputs)
+        axios.post('https://stay-inside-meet-up.netlify.app/events/create', eventInputs)
             .then(response => {
                 if (response.status === 200) {
                     setEventCreated(true)
