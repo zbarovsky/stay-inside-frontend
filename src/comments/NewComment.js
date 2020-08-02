@@ -41,7 +41,7 @@ console.log(props.id)
       <FormControl
         aria-describedby="basic-addon2"
         hidden type="text" name='eventId'
-        onChange={handleInputChange}
+        value={props.id}
       />
         <FormControl
         className='rounded-sm'
