@@ -23,7 +23,8 @@ console.log(props.id)
       axios.post(`${process.env.REACT_APP_API}/comments`, commentInputs)
       .then(response => {
           console.log(response)
-          setCreatedComment(true)
+          setCreatedComment(true);
+          <Redirect to = {'/'} />
       })
       .catch(err => {
         console.log('🔥🔥🔥🔥')
@@ -36,11 +37,11 @@ console.log(props.id)
     setCommentInputs({...commentInputs, [e.target.name]: e.target.value})
   }
 
-  if (createdComment) {
-    return (
-        <Redirect to={'/'} /> 
-    )
-  } 
+  // if (createdComment) {
+  //   return (
+  //       <Redirect to={'/'} /> 
+  //   )
+  // } 
   
   return (
     <Form onSubmit={commentSubmit}>
