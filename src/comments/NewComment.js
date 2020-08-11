@@ -4,6 +4,7 @@ import { Button } from 'react-bootstrap';
 import { Form } from 'react-bootstrap'
 import { InputGroup } from 'react-bootstrap'
 import { FormControl } from 'react-bootstrap' 
+import { Link, Redirect } from 'react-router-dom';
 
 
 export default function NewComment(props) {
@@ -37,7 +38,7 @@ console.log(props.id)
 
   if (createdComment) {
     return (
-        <Redirect to={'/back'} />
+        <Redirect to={'/back'} /> 
     )
   } else {
     return (
