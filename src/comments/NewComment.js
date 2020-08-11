@@ -8,7 +8,7 @@ import { Link, Redirect } from 'react-router-dom';
 
 
 export default function NewComment(props) {
-  let [createdComment, setCreatedComment] = useState(false)
+  let [commentCreated, setCommentCreated] = useState(false)
   let [commentInputs, setCommentInputs] = useState({
     name: props.user.name,
     content: "",
@@ -23,9 +23,7 @@ console.log(props.id)
       axios.post(`${process.env.REACT_APP_API}/comments`, commentInputs)
       .then(response => {
           console.log(response)
-          setCreatedComment(true)
-      }).then(response => {
-        <Redirect to = {'/'} />
+          setCommentCreated(true)
       })
       .catch(err => {
         console.log('🔥🔥🔥🔥')
@@ -38,11 +36,12 @@ console.log(props.id)
     setCommentInputs({...commentInputs, [e.target.name]: e.target.value})
   }
 
-  // if (createdComment) {
-  //   return (
-  //       <Redirect to={'/'} /> 
-  //   )
-  // } 
+  if (commentCreated) {
+    console.log(commentCreated)
+    return (
+      <Redirect to={'/'} /> 
+    )
+  } 
   
   return (
     <Form onSubmit={commentSubmit}>
