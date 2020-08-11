@@ -24,9 +24,8 @@ console.log(props.id)
       .then(response => {
           console.log(response)
           setCreatedComment(true)
-          .then(response => {
-            <Redirect to = {'/'} />
-          })
+      }).then(response => {
+        <Redirect to = {'/'} />
       })
       .catch(err => {
         console.log('🔥🔥🔥🔥')
