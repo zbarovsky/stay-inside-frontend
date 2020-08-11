@@ -35,7 +35,7 @@ console.log(props.id)
     setCommentInputs({...commentInputs, [e.target.name]: e.target.value})
   }
 
-  if (commentCreated) {
+  if (createdComment) {
     return (
         <Redirect to={'/'} />
     )
