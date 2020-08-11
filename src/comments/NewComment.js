@@ -42,7 +42,7 @@ console.log(props.id)
     if (commentCreated) {
         console.log(commentCreated)
         return (
-          <Redirect to={'/'} /> 
+          <Redirect to={'/profile'} /> 
         )
       } 
     }
