@@ -36,12 +36,16 @@ console.log(props.id)
     setCommentInputs({...commentInputs, [e.target.name]: e.target.value})
   }
 
-  if (commentCreated) {
-    console.log(commentCreated)
-    return (
-      <Redirect to={'/'} /> 
-    )
-  } 
+  // 
+
+  function refresh() {
+    if (commentCreated) {
+        console.log(commentCreated)
+        return (
+          <Redirect to={'/'} /> 
+        )
+      } 
+    }
   
   return (
     <Form onSubmit={commentSubmit}>
@@ -60,7 +64,7 @@ console.log(props.id)
         onChange={handleInputChange}
       />
       <InputGroup.Append>
-        <Button variant="outline-info" type='submit'>Submit</Button>
+        <Button variant="outline-info" type='submit' onClick={refresh}>Submit</Button>
       </InputGroup.Append>
       </InputGroup>
     </Form>
