@@ -8,7 +8,7 @@ import { Link, Redirect } from 'react-router-dom';
 
 
 export default function NewComment(props) {
-  let [commentCreated, setCreatedComment] = useState(false)
+  let [createdComment, setCreatedComment] = useState(false)
   let [commentInputs, setCommentInputs] = useState({
     name: props.user.name,
     content: "",
