@@ -37,7 +37,7 @@ console.log(props.id)
 
   if (createdComment) {
     return (
-        <Redirect to={'/'} />
+        <Redirect to={'/back'} />
     )
   } else {
     return (
