@@ -21,7 +21,7 @@ const CreateEvent = (props) => {
         e.preventDefault()
         console.log("😆")
         console.log(updateEventInputs)
-        window.location.reload()
+        // window.location.reload()
         axios.put(`${process.env.REACT_APP_API}/events/${props.id}`, updateEventInputs)
             .then(response => {
                 if (response.status === 200) {
