@@ -25,6 +25,7 @@ console.log(props.id)
           console.log(response)
           // setCommentCreated(true,[])
           props.setNewComment(true)
+          setCommentInputs({...commentInputs, content:""})
       })
       .catch(err => {
         console.log('🔥🔥🔥🔥')
@@ -63,6 +64,7 @@ console.log(props.id)
             aria-describedby="basic-addon2"
             type="text" name='content'
             onChange={handleInputChange}
+            value={commentInputs.content}
           />
           <InputGroup.Append>
             <Button variant="outline-info" type='submit'>Submit</Button>
