@@ -9,8 +9,7 @@ export default function DeleteComment(props) {
     // window.location.reload(true)
     axios.delete(`${process.env.REACT_APP_API}/events/${props.id}`)
     .then(response => {
-        console.log(response);
-        <Redirect to={'/'} />
+        console.log(response)
     })
     .catch(err => {
       console.log('🔥🔥🔥🔥')
@@ -18,11 +17,11 @@ export default function DeleteComment(props) {
     })
   }
 
-//   if (handleDelete) {
-//     return (
-//       <Redirect to={'/'} /> 
-//     )
-// } else {
+  if (handleDelete) {
+    return (
+      <Redirect to={'/'} /> 
+    )
+} else {
     return (
       <form className="event-form-btn" onSubmit={handleDelete}>
         <Button type="submit" className='delete-event btn btn-danger p-1'>
@@ -33,5 +32,5 @@ export default function DeleteComment(props) {
         </Button>
       </form>
     )
-  // }
+  }
 }
