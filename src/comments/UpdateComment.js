@@ -10,7 +10,7 @@ export default function NewComment(props) {
   })
 
   let handleUpdateComment = e => {
-    window.location.reload(); 
+    //window.location.reload(); 
     e.preventDefault()
       axios.put(`${process.env.REACT_APP_API}comments/${props.id}`, inputs)
       .then(response => {
@@ -29,7 +29,12 @@ export default function NewComment(props) {
     setInputs({...inputs, [e.target.name]: e.target.value})
   }
 
-  return (
+  if (updateComment) {
+    return (
+      <Redirect to={'/profile'} />
+    )
+  } else {
+    return (
     <form onSubmit={handleUpdateComment}>
       <div class="form-group">
         <label for="exampleFormControlTextarea1">Comment</label>
@@ -42,5 +47,8 @@ export default function NewComment(props) {
         Submit
       </Button>
     </form>
-  )
+    )
+  }
 }
+
+  
