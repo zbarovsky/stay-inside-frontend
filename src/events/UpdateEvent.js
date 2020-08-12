@@ -41,58 +41,54 @@ const CreateEvent = (props) => {
         setUpdateEventInputs({...updateEventInputs, [e.target.name]: e.target.value})
     }
 
-    if (updateEventCreated) {
-        return (
-            <Redirect to={'/profile'} />
+
+    return (
+        <Card className="mx-auto">
+            <Card.Header>Update Event</Card.Header>
+            <Card.Body>  
+                <Card.Text>
+                <form onSubmit={handleSubmit}>
+                    <div className="form-group">
+                        <label>Event Name</label>
+                        <br/>
+                        <input required  type="text" name="title" onChange={handleInputChange} />
+                    </div>
+                    <div className="form-group">
+                        <label>Link to Event</label>
+                        <br/>
+                        <input type="text" name="eventLink" onChange={handleInputChange} />
+                    </div>
+                    <div className="form-group">
+                        <label>Description</label>
+                        <br/>
+                        <input required type="text" name="description" onChange={handleInputChange} />
+                    </div>
+                    <FormGroup>
+                        <Label for="exampleDate">Date</Label>
+                        <Input
+                            type="date"
+                            name="date"
+                            placeholder="date placeholder"
+                            onChange={handleInputChange}
+                        />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label for="exampleTime">Time</Label>
+                        <Input
+                            type="time"
+                            name="time"
+                            placeholder="time placeholder"
+                            onChange={handleInputChange}
+                        />
+                    </FormGroup>
+                    <Button variant="info" type="submit" className="btn btn-primary float-right">Submit</Button>
+                </form>
+            </Card.Text>
+            </Card.Body>
+        </Card>
         )
-    } else {
-        return (
-            <Card className="mx-auto">
-                <Card.Header>Update Event</Card.Header>
-                <Card.Body>  
-                    <Card.Text>
-                    <form onSubmit={handleSubmit}>
-                        <div className="form-group">
-                            <label>Event Name</label>
-                            <br/>
-                            <input required  type="text" name="title" onChange={handleInputChange} />
-                        </div>
-                        <div className="form-group">
-                            <label>Link to Event</label>
-                            <br/>
-                            <input type="text" name="eventLink" onChange={handleInputChange} />
-                        </div>
-                        <div className="form-group">
-                            <label>Description</label>
-                            <br/>
-                            <input required type="text" name="description" onChange={handleInputChange} />
-                        </div>
-                        <FormGroup>
-                            <Label for="exampleDate">Date</Label>
-                            <Input
-                                type="date"
-                                name="date"
-                                placeholder="date placeholder"
-                                onChange={handleInputChange}
-                            />
-                        </FormGroup>
-                        <FormGroup>
-                            <Label for="exampleTime">Time</Label>
-                            <Input
-                                type="time"
-                                name="time"
-                                placeholder="time placeholder"
-                                onChange={handleInputChange}
-                            />
-                        </FormGroup>
-                        <Button variant="info" type="submit" className="btn btn-primary float-right">Submit</Button>
-                    </form>
-                </Card.Text>
-                </Card.Body>
-            </Card>
-            )
-        }
     }
+    
 
 
 export default CreateEvent
