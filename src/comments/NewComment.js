@@ -40,14 +40,12 @@ console.log(props.id)
 
   // 
 
-  // function refresh() {
+  
     if (commentCreated) {
         console.log(commentCreated)
         return (
           <Redirect to={'/'} /> 
-          // <BrowserRouter forceRefresh={true} />
         )
-      // } 
     } else {
       return (
         <Form onSubmit={commentSubmit}>

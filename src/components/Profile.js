@@ -10,6 +10,7 @@ const Profile = (props) => {
 
   // GET EVENTS
   let [events, setEvents] = useState([])
+  // const [deleteEvent, setDelete] = useState(false)
 
   useEffect(()=>{
       axios.post(`${process.env.REACT_APP_API}/events`, {data: {events: events, user: props.user}})
