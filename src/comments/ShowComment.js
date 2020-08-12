@@ -11,7 +11,7 @@ export default function ShowComment(props) {
   const [comments, setComments] = useState([]);
 
   function getComment() {
-    if (props.newComment) {
+    // if (props.newComment) {
       axios.post(`${process.env.REACT_APP_API}/comments/eventcomments`, {data: {comments: comments, event:props.id}})
       .then(response => {
         setComments(response.data)
@@ -23,7 +23,7 @@ export default function ShowComment(props) {
       })
       console.log('call for server')
       props.setNewComment(false)
-    }
+    // }
   }
 
   useEffect(getComment, [])
