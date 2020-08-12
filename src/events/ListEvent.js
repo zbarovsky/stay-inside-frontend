@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useState }from 'react'
 import { Card } from 'react-bootstrap'
 import NewComment from '../comments/NewComment'
 import ShowComment from '../comments/ShowComment'
 import DeleteEvent from '../events/DeleteEvent'
 
 export default function ListEvent({user, event})  {
-    
+    const [newComment, setNewComment] = useState(false)
+
+
         return (
             <Card className='shadow-lg p-0 mb-5 bg-white'>
             <Card.Header className='bg-light p-1'>
@@ -22,8 +24,8 @@ export default function ListEvent({user, event})  {
                 <br/>
                <h5>{event.description}</h5> 
               </Card.Text>
-              <ShowComment user={user} id={event._id} /> 
-              <NewComment user={user} id={event._id} />
+              <ShowComment user={user} id={event._id} setNewComment={setNewComment} newComment={newComment} /> 
+              <NewComment user={user} id={event._id} setNewComment={setNewComment} />
             </Card.Body>
           </Card>
 

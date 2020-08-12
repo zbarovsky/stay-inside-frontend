@@ -23,8 +23,8 @@ console.log(props.id)
       axios.post(`${process.env.REACT_APP_API}/comments`, commentInputs)
       .then(response => {
           console.log(response)
-          setCommentCreated(true,[])
-
+          // setCommentCreated(true,[])
+          props.setNewComment(true)
       })
       .catch(err => {
         console.log('🔥🔥🔥🔥')
