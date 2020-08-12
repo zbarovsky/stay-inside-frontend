@@ -39,11 +39,12 @@ console.log(props.id)
 
   // 
 
-  function refresh() {
-    // if (commentCreated) {
+  // function refresh() {
+    if (commentCreated) {
         console.log(commentCreated)
         return (
-          <Redirect to={'/profile'} /> 
+          // <Redirect to={'/profile'} /> 
+          <BrowserRouter forceRefresh={true} />
         )
       // } 
     }
