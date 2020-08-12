@@ -43,34 +43,32 @@ console.log(props.id)
     if (commentCreated) {
         console.log(commentCreated)
         return (
-          <Redirect to={'/profile'} /> 
+          <Redirect to={'/events'} /> 
           // <BrowserRouter forceRefresh={true} />
         )
       // } 
-    
-  
-        } else {
-    return (
-    <Form onSubmit={commentSubmit}>
-      <InputGroup className="mb-3 mt-3">
-      <FormControl
-        aria-describedby="basic-addon2"
-        hidden type="text" name='eventId'
-        value={props.id}
-      />
-        <FormControl
-        className='rounded-sm'
-        placeholder="Comment"
-        aria-label="Comment"
-        aria-describedby="basic-addon2"
-        type="text" name='content'
-        onChange={handleInputChange}
-      />
-      <InputGroup.Append>
-        <Button variant="outline-info" type='submit'>Submit</Button>
-      </InputGroup.Append>
-      </InputGroup>
-    </Form>
-  )
+    } else {
+      return (
+        <Form onSubmit={commentSubmit}>
+          <InputGroup className="mb-3 mt-3">
+          <FormControl
+            aria-describedby="basic-addon2"
+            hidden type="text" name='eventId'
+            value={props.id}
+          />
+            <FormControl
+            className='rounded-sm'
+            placeholder="Comment"
+            aria-label="Comment"
+            aria-describedby="basic-addon2"
+            type="text" name='content'
+            onChange={handleInputChange}
+          />
+          <InputGroup.Append>
+            <Button variant="outline-info" type='submit'>Submit</Button>
+          </InputGroup.Append>
+          </InputGroup>
+        </Form>
+      )
   }
 }
