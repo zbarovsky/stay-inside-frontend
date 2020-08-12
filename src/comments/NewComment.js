@@ -43,13 +43,14 @@ console.log(props.id)
     if (commentCreated) {
         console.log(commentCreated)
         return (
-          // <Redirect to={'/profile'} /> 
-          <BrowserRouter forceRefresh={true} />
+          <Redirect to={'/profile'} /> 
+          // <BrowserRouter forceRefresh={true} />
         )
       // } 
-    }
+    
   
-  return (
+        } else {
+    return (
     <Form onSubmit={commentSubmit}>
       <InputGroup className="mb-3 mt-3">
       <FormControl
@@ -71,4 +72,5 @@ console.log(props.id)
       </InputGroup>
     </Form>
   )
+  }
 }
