@@ -4,9 +4,9 @@ import { Button } from 'react-bootstrap'
 
 export default function DeleteComment(props) {
   const handleDelete = e => {
-    window.location.reload(); 
+    // window.location.reload(); 
     e.preventDefault()
-    window.location.reload(true)
+    // window.location.reload(true)
     axios.delete(`${process.env.REACT_APP_API}/events/${props.id}`)
     .then(response => {
         console.log(response)
