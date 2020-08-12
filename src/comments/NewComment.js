@@ -67,7 +67,7 @@ console.log(props.id)
         onChange={handleInputChange}
       />
       <InputGroup.Append>
-        <Button variant="outline-info" type='submit' onClick={refresh}>Submit</Button>
+        <Button variant="outline-info" type='submit'>Submit</Button>
       </InputGroup.Append>
       </InputGroup>
     </Form>
