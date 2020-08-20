@@ -6,8 +6,10 @@ import { Redirect } from 'react-router-dom'
 export default function DeleteComment(props) {
   const handleDelete = e => {
     e.preventDefault()
-    //window.location.reload(true)
-    axios.delete(`${process.env.REACT_APP_API}comments/${props.id}`)
+
+    window.location.reload(true)
+    axios.delete(`${process.env.REACT_APP_API}/comments/${props.id}`)
+
     .then(response => {
         console.log(response)
     })

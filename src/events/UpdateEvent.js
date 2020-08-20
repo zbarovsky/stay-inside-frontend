@@ -7,7 +7,7 @@ import { Redirect } from 'react-router-dom';
 // import { Redirect } from 'react-router-dom'
 
 const CreateEvent = (props) => {
-    console.log(props.user)
+    // console.log(props.user)
     const [updateEventCreated, setUpdateEventCreated] = useState(false)
     const [updateEventInputs, setUpdateEventInputs] = useState({
         title: "",
@@ -22,8 +22,9 @@ const CreateEvent = (props) => {
         e.preventDefault()
         console.log("😆")
         console.log(updateEventInputs)
-        //window.location.reload()
-        axios.put(`${process.env.REACT_APP_API}events/${props.id}`, updateEventInputs)
+        // window.location.reload()
+        axios.put(`${process.env.REACT_APP_API}/events/${props.id}`, updateEventInputs)
+
             .then(response => {
                 if (response.status === 200) {
                     setUpdateEventCreated(true)

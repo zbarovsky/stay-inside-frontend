@@ -10,18 +10,25 @@ import UpdateDropDown from './UpdateDropDown'
 export default function ShowComment(props) {
   const [comments, setComments] = useState([]);
 
-  useEffect(()=>{
-    axios.post(`${process.env.REACT_APP_API}comments/eventcomments`, {data: {comments: comments, event:props.id}})
-    .then(response => {
-      setComments(response.data)
-      console.log(response.data)
-    })
-    .catch(err => {
-      console.log('🔥🔥🔥🔥')
-      console.log(err)
-    })
-    console.log('call for server')
-  }, [])
+
+  function getComment() {
+    // if (props.newComment) {
+      axios.post(`${process.env.REACT_APP_API}/comments/eventcomments`, {data: {comments: comments, event:props.id}})
+      .then(response => {
+        setComments(response.data)
+        // console.log(response.data)
+      })
+      .catch(err => {
+        console.log('🔥🔥🔥🔥')
+        console.log(err)
+      })
+      console.log('call for server')
+      props.setNewComment(false)
+    // }
+  }
+
+  useEffect(getComment, [])
+  useEffect(getComment, [props.newComment])
 
   return (
     <ul className='comment-container'>
