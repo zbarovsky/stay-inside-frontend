@@ -10,7 +10,9 @@ export default function ShowEvents(props) {
   let [events, setEvents] = useState([])
 
   useEffect(()=>{
+
     axios.get(`${process.env.REACT_APP_API}/events`, events)
+
     .then(response => {
         setEvents(response.data)
         console.log(response)

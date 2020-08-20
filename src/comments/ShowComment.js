@@ -10,6 +10,7 @@ import UpdateDropDown from './UpdateDropDown'
 export default function ShowComment(props) {
   const [comments, setComments] = useState([]);
 
+
   function getComment() {
     // if (props.newComment) {
       axios.post(`${process.env.REACT_APP_API}/comments/eventcomments`, {data: {comments: comments, event:props.id}})

@@ -36,7 +36,7 @@ const Signup = () => {
       }
       
 
-  axios.post(`${process.env.REACT_APP_API}/users/register`, newUser)
+  axios.post(`${process.env.REACT_APP_API}users/register`, newUser)
         // .then(res => console.log(res.data))
     .then(res => {
       setRedirect(true)

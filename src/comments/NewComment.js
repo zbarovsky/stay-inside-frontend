@@ -7,6 +7,7 @@ import { FormControl } from 'react-bootstrap'
 import { Link, Redirect } from 'react-router-dom';
 
 
+
 export default function NewComment(props) {
   let [commentCreated, setCommentCreated] = useState(false)
   let [commentInputs, setCommentInputs] = useState({
@@ -18,6 +19,7 @@ export default function NewComment(props) {
 console.log(props.id)
 
   let commentSubmit = e => {
+
     // window.location.reload(); 
     e.preventDefault()
       axios.post(`${process.env.REACT_APP_API}/comments`, commentInputs)
@@ -38,9 +40,6 @@ console.log(props.id)
     setCommentInputs({...commentInputs, [e.target.name]: e.target.value})
   }
 
-  // 
-
-  
     if (commentCreated) {
         console.log(commentCreated)
         return (
@@ -72,3 +71,6 @@ console.log(props.id)
       )
   }
 }
+
+
+  

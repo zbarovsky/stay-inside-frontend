@@ -1,9 +1,11 @@
 import React from 'react'
 import axios from 'axios'
 import { Button } from 'react-bootstrap'
+import { Redirect } from 'react-router-dom';
 
 export default function DeleteComment(props) {
   const handleDelete = e => {
+
     // window.location.reload(); 
     e.preventDefault()
     // window.location.reload(true)
@@ -16,7 +18,7 @@ export default function DeleteComment(props) {
       console.log(err)
     })
   }
-
+  
 //   if (handleDelete) {
 //     return (
 //       <Redirect to={'/'} /> 
@@ -34,3 +36,6 @@ export default function DeleteComment(props) {
     )
   // }
 }
+
+  
+

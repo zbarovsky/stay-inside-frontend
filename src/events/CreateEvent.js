@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Card, Button } from 'react-bootstrap'
 import { FormGroup, Label, Input } from 'reactstrap';
-import { Link, Redirect } from 'react-router-dom';
 
-// import { Redirect } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom';
 
 const CreateEvent = (props) => {
     console.log("line 9", props.user)
@@ -23,6 +22,7 @@ const CreateEvent = (props) => {
         e.preventDefault()
         console.log("😆")
         console.log(eventInputs)
+
 
         axios.post(`${process.env.REACT_APP_API}/events/create`, eventInputs)
             .then(response => {
@@ -95,5 +95,6 @@ const CreateEvent = (props) => {
     }
     
 }
+
 
 export default CreateEvent
